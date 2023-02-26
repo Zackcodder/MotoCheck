@@ -39,6 +39,7 @@ import 'package:transiter_driver/ui/views/my_trips/my_trips_view.dart';
   dependencies: [
     LazySingleton(classType: BottomSheetService),
     LazySingleton(classType: DialogService),
+    LazySingleton(classType: SnackbarService),
     LazySingleton(classType: NavigationService),
     LazySingleton(classType: UrlLauncherService),
     LazySingleton(classType: GoogleMapService),

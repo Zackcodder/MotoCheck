@@ -31,7 +31,7 @@ class AboutUsView extends StackedView<AboutUsViewModel> {
               children: [
                 ClipRRect(
                   child: Image.asset(
-                    "images/logo1.png",
+                    "assets/images/logo1.png",
                     height: 80,
                     width: 80,
                   ),

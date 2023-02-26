@@ -26,7 +26,7 @@ class SplashScreenView extends StackedView<SplashScreenViewModel> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("images/splashscreen2.png"),
+                image: AssetImage("assets/images/splashscreen2.png"),
                 fit: BoxFit.cover,
               ),
             ),

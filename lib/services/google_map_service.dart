@@ -40,8 +40,8 @@ class GoogleMapService {
       BitmapDescriptor.fromAssetImage(
               imageConfiguration,
               (Platform.isIOS)
-                  ? 'images/car_ios.png'
-                  : 'images/car_android.png')
+                  ? 'assets/images/car_ios.png'
+                  : 'assets/images/car_android.png')
           .then((icon) {
         movingMarkerIcon = icon;
       });
