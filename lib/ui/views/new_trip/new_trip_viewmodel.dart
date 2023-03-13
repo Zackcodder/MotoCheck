@@ -17,6 +17,8 @@ import 'package:transiter_driver/ui/common/app_colors.dart';
 import 'package:transiter_driver/ui/common/helper_methods.dart';
 import 'package:transiter_driver/ui/extensions/trip_details_extension.dart';
 
+import '../../common/app_strings.dart';
+
 class NewTripViewModel extends BaseViewModel {
   final _googleMapService = locator<GoogleMapService>();
   final _geoLocationService = locator<GeoLocationService>();
@@ -40,11 +42,11 @@ class NewTripViewModel extends BaseViewModel {
   bool _isRequestingDirection = false;
   bool get isRequestingDirection => _isRequestingDirection;
 
-  String _status = 'accepted';
+  String _status = ksAccepted;
   String get status => _status;
   set setStatus(val) => _status = val;
 
-  String _buttonTitle = 'ARRIVED';
+  String _buttonTitle = ksArrivedCap;
   String get buttonTitle => _buttonTitle;
   set setButtonTitle(val) => _buttonTitle = val;
 
@@ -52,7 +54,7 @@ class NewTripViewModel extends BaseViewModel {
   Color get buttonColor => _buttonColor;
   set setButtonColor(val) => _buttonColor = val;
 
-  String _durationString = 'accepted';
+  String _durationString = ksAccepted;
   String get durationString => _durationString;
 
   dynamic _circles;
@@ -122,7 +124,7 @@ class NewTripViewModel extends BaseViewModel {
 
       List<dynamic> destinationLatLng;
 
-      if (status == 'accepted') {
+      if (status == ksAccepted) {
         destinationLatLng = tripDetails.pickup ?? [];
       } else {
         destinationLatLng = tripDetails.destination ?? [];
@@ -172,16 +174,16 @@ class NewTripViewModel extends BaseViewModel {
     // rideRef.child('status').set('ended');
 
     Map saveMyTrips = {
-      'created_at': DateTime.now().toString(),
-      'rider_name': tripDetails.nameOfRider,
-      'rider_phone': tripDetails.tripRiderPhone,
-      'rider_Photo': tripDetails.photoOfRider,
-      'person_number': tripDetails.passengerNumber,
-      'pickup_address': tripDetails.tripPickupAddress,
-      'destination_address': tripDetails.tripDestinationAddress,
-      'payment_method': tripDetails.tripPaymentMethod,
-      'rider_id': tripDetails.tripRideId,
-      'tripCost': tripDetails.tripTotalCost,
+      ksCreatedAt: DateTime.now().toString(),
+      ksRiderName: tripDetails.nameOfRider,
+      ksRiderPhoneNumber: tripDetails.tripRiderPhone,
+      ksRiderPhoto: tripDetails.photoOfRider,
+      ksPassengerNumber: tripDetails.passengerNumber,
+      ksPickUpAddress: tripDetails.tripPickupAddress,
+      ksDestinationAddress: tripDetails.tripDestinationAddress,
+      ksPaymentMethod: tripDetails.tripPaymentMethod,
+      ksRiderId: tripDetails.tripRideId,
+      ksTripCost: tripDetails.tripTotalCost,
     };
 
     // TODO SAVE TRIP TO BACKEND
@@ -191,7 +193,7 @@ class NewTripViewModel extends BaseViewModel {
     ridePositionStream?.cancel();
 
     _dialogService.showCustomDialog(variant: DialogType.collectPayment, data: {
-      'tripCost': tripDetails.tripTotalCost,
+      ksTripCost: tripDetails.tripTotalCost,
     });
 
     // showDialog(

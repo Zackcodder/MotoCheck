@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../common/app_strings.dart';
 import 'how_it_works_viewmodel.dart';
 
 class HowItWorksView extends StackedView<HowItWorksViewModel> {
@@ -14,7 +15,7 @@ class HowItWorksView extends StackedView<HowItWorksViewModel> {
   ) {
     return const Scaffold(
       body: Center(
-        child: Text("How it Work Page"),
+        child: Text(ksHowItWorks),
       ),
     );
   }

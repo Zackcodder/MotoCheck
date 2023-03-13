@@ -9,6 +9,8 @@ import 'package:transiter_driver/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:transiter_driver/ui/common/themes.dart';
 
+import 'ui/common/app_strings.dart';
+
 Future<void> main() async {
   await ScreenUtil.ensureScreenSize();
   // initialise theme manager
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
               lightTheme: lightTheme,
               builder: (context, regularTheme, darkTheme, themeMode) {
                 return MaterialApp(
-                  title: 'Flutter Demo',
+                  title: ksAppTitle,
                   initialRoute: Routes.splashScreenView,
                   onGenerateRoute: StackedRouter().onGenerateRoute,
                   navigatorKey: StackedService.navigatorKey,

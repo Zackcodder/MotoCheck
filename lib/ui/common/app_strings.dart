@@ -1,3 +1,87 @@
+const String ksAddPhoneNumber = 'Add your Phone Number';
+const String ksAddPhoneNumberHint = "Phone Number";
+const String ksAppTitle = 'Flutter Demo';
+const String ksArrivalTime = "Arrived in -   ";
+const String ksAccepted = 'Accepted';
+const String ksAccept = 'Accept';
+const String ksArrived = 'Arrived';
+const String ksArrivedCap = 'ARRIVED';
+
+const String ksCompanyName = "Transiter";
+const String ksCarColorHint = "Car Color";
+const String ksCarNumberHint = "Car Number";
+const String ksCarModelErrorPrompt = 'Please provide a valid car model';
+const String ksCarColorErrorPrompt = 'Please provide a valid car color';
+const String ksCarNumberErrorPrompt = 'Please provide a valid car number';
+const String ksContactUsMessageHint = "Message";
+const String ksContactUsSuccessMessage =
+    "message sent successfully, after review your message we will send you to your email account, have a nice day";
+const String ksContactUsSubjectHint = "Subject";
+const String ksCarModelHint = "Car Model";
+const String ksCarModelTextField = 'carModel';
+const String ksCarNumberTextField = 'carNumber';
+const String ksCarColorTextField = 'carColor';
+const String ksCreatedAt = 'Created at';
+const String ksCashPaymentDialogHeader = 'CASH PAYMENT';
+const String ksCashPaymentDialogDesc = 'Amount above is the total fares to be charged to the rider';
+const String ksCashCollect = "Collect";
+const String ksCancel = "Cancel";
+
+const String ksDeleteAllTripHeader = 'Delete All Trips';
+const String ksDeleteAllTripConfirmMsg ='Are you sure you want to delete All this Trips ?';
+const String ksDeleteLabel = "Delete";
+const String ksDestinationAddress = "destination_address";
+
+
+const String ksEndTrip = 'END TRIP';
+
+const String ksFinished = "Finish";
+const String ksFromJellyWebb = 'From Jellywebb';
+const String ksForDriver = "For Drivers";
+
+
+
 const String ksHomeBottomSheetTitle = 'Build Great Apps!';
+const String ksHowItWorks = "How it Work Page";
+const String ksHelpQuestion = "How Can we help you!";
 const String ksHomeBottomSheetDescription =
     'Stacked is built to help you build better apps. Give us a chance and we\'ll prove it to you. Check out stacked.filledstacks.com to learn more';
+
+
+const String ksInstagramLaunchErrorMsg = 'Could not launch instagram';
+const String ksInstagram = "Instagram";
+
+const String ksLetTakeYouThere = "Lets take you there";
+const String ksLoading = 'Loading ...';
+
+
+const String ksMyTripHeader = 'My Trips';
+
+const String ksNoTripMsg = "you have No Trips yet";
+const String ksNext = 'Next';
+const String ksNow = "Now";
+const String ksNewTrip = "NEW TRIP";
+
+const String ksOnTrip = 'onTrip';
+
+
+const String ksPassengerNumber = "person_number";
+const String ksPickUpAddress = "pickup_address";
+const String ksPaymentMethod = 'payment_method';
+
+const String ksRiderPhoto = "rider_Photo";
+const String ksRiderName = "rider_name";
+const String ksRiderPhoneNumber = 'rider_phone';
+const String ksRiderId = 'rider_id';
+
+const String ksStartTrip = 'START TRIP';
+const String ksSendLabel = "Send";
+const String ksStatus = 'status';
+const String ksSiginInButtonLabelForDriverApp = "Sign In with Jellywebb";
+const String ksStartUpHeader = 'STACKED';
+
+const String ksTripCost = "Trip Cost";
+const String ksTripDetails = 'tripDetails';
+
+const String ksVehicleInfoPageHeader = 'Enter vehicle details';
+const String ksValidPhoneNumberError = 'Please provide a valid Phone Number';

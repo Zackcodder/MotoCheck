@@ -8,6 +8,7 @@ import 'package:transiter_driver/ui/common/taxi_app_icons.dart';
 import 'package:transiter_driver/ui/common/themes.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
 
+import '../../common/app_strings.dart';
 import 'add_phone_number_view.form.dart';
 import 'add_phone_number_viewmodel.dart';
 
@@ -44,7 +45,7 @@ class AddPhoneNumberView extends StackedView<AddPhoneNumberViewModel>
             ),
             verticalSpaceSmall,
             Text(
-              'Add your Phone Number',
+              ksAddPhoneNumber,
               style: Theme.of(context).textTheme.displaySmall?.copyWith(
                     color: isDarkMode(context) ? kcWhite : kcDark,
                   ),
@@ -58,7 +59,7 @@ class AddPhoneNumberView extends StackedView<AddPhoneNumberViewModel>
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   filled: true,
-                  hintText: "Phone Number",
+                  hintText: ksAddPhoneNumberHint,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(8.r),
@@ -96,7 +97,7 @@ class AddPhoneNumberView extends StackedView<AddPhoneNumberViewModel>
                     borderRadius: BorderRadius.circular(8)),
                 child: Center(
                   child: Text(
-                    "Finish",
+                    ksFinished,
                     style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                           color: kcWhite,
                         ),

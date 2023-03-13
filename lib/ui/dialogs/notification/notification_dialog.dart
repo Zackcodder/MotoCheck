@@ -13,6 +13,7 @@ import 'package:transiter_driver/ui/extensions/string_extension.dart';
 import 'package:transiter_driver/ui/extensions/trip_details_extension.dart';
 import 'package:transiter_driver/ui/shared_widgets/dumb_widgets/cached_image_widget.dart';
 
+import '../../common/app_strings.dart';
 import 'notification_dialog_model.dart';
 
 class NotificationDialog extends StackedView<NotificationDialogModel> {
@@ -31,7 +32,7 @@ class NotificationDialog extends StackedView<NotificationDialogModel> {
     NotificationDialogModel viewModel,
     Widget? child,
   ) {
-    final TripDetailsModel tripDetails = request.data['tripDetails'];
+    final TripDetailsModel tripDetails = request.data[ksTripDetails];
 
     return Dialog(
       shape: RoundedRectangleBorder(
@@ -71,13 +72,13 @@ class NotificationDialog extends StackedView<NotificationDialogModel> {
                       ),
                       horizontalSpaceSmall,
                       Text(
-                        "NEW TRIP",
+                        ksNewTrip,
                         style: ktsBoldText18,
                       )
                     ],
                   ),
                   Text(
-                    "Now",
+                    ksNow,
                     style: ktsBoldText16.copyWith(color: kcGreen),
                   )
                 ],
@@ -110,7 +111,7 @@ class NotificationDialog extends StackedView<NotificationDialogModel> {
                   Column(
                     children: [
                       Text(
-                        "Trip Cost",
+                        ksTripCost,
                         style: ktsNormaltext12.copyWith(color: kcGrey),
                       ),
                       Text(
@@ -260,7 +261,7 @@ class NotificationDialog extends StackedView<NotificationDialogModel> {
                         ),
                         child: Center(
                           child: Text(
-                            "Cancel",
+                            ksCancel,
                             style: ktsBoldText18.copyWith(
                               color:
                                   isDarkMode(context) ? Colors.white : kcDark,
@@ -286,7 +287,7 @@ class NotificationDialog extends StackedView<NotificationDialogModel> {
                         ),
                         child: Center(
                           child: Text(
-                            "Accept",
+                            ksAccept,
                             style: ktsBoldText18.copyWith(color: kcWhite),
                           ),
                         ),

@@ -9,6 +9,7 @@ import 'package:transiter_driver/ui/common/taxi_app_icons.dart';
 import 'package:transiter_driver/ui/common/text_style.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
 
+import '../../common/app_strings.dart';
 import 'splash_screen_viewmodel.dart';
 
 class SplashScreenView extends StackedView<SplashScreenViewModel> {
@@ -45,11 +46,11 @@ class SplashScreenView extends StackedView<SplashScreenViewModel> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Transiter",
+                    ksCompanyName,
                     style: fugazTextStyle(color: kcWhite, fontSize: 50),
                   ),
                   Text(
-                    "For Drivers",
+                    ksForDriver,
                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                           letterSpacing: 0.7,
                           color: kcWhite,
@@ -86,7 +87,7 @@ class SplashScreenView extends StackedView<SplashScreenViewModel> {
                             ),
                             verticalSpace(20),
                             Text(
-                              "Sign In with Jellywebb",
+                              ksSiginInButtonLabelForDriverApp,
                               style: ktsNormaltext16.copyWith(
                                 color: kcWhite,
                                 fontSize: 20.sp,
@@ -114,7 +115,7 @@ class SplashScreenView extends StackedView<SplashScreenViewModel> {
                         viewModel.nToAboutUs();
                       },
                       child: Text(
-                        'Transiter',
+                        ksCompanyName,
                         style: ktsNormaltext16.copyWith(
                           color: kcWhite,
                         ),
@@ -128,7 +129,7 @@ class SplashScreenView extends StackedView<SplashScreenViewModel> {
                         viewModel.nToHowItWorks();
                       },
                       child: Text(
-                        'From Jellywebb',
+                        ksFromJellyWebb,
                         style: ktsNormaltext16.copyWith(
                           color: kcWhite,
                         ),

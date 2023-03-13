@@ -6,6 +6,7 @@ import 'package:transiter_driver/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
+import '../../common/app_strings.dart';
 import 'collect_payment_dialog_model.dart';
 
 class CollectPaymentDialog extends StackedView<CollectPaymentDialogModel> {
@@ -35,21 +36,21 @@ class CollectPaymentDialog extends StackedView<CollectPaymentDialogModel> {
           children: <Widget>[
             verticalSpace(20),
             Text(
-              'CASH PAYMENT',
+              ksCashPaymentDialogHeader,
               style: ktsBoldText20,
             ),
             verticalSpace(20),
             const Divider(),
             verticalSpace(16),
             Text(
-              '\$${request.data['tripCost']}',
+              '\$${request.data[ksTripCost]}',
               style: ktsBoldText50,
             ),
             verticalSpace(16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                'Amount above is the total fares to be charged to the rider',
+                ksCashPaymentDialogDesc,
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
@@ -75,7 +76,7 @@ class CollectPaymentDialog extends StackedView<CollectPaymentDialogModel> {
                       borderRadius: BorderRadius.circular(8)),
                   child: Center(
                     child: Text(
-                      "Collect",
+                      ksCashCollect,
                       style: Theme.of(context)
                           .textTheme
                           .headlineLarge

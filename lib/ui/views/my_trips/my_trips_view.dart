@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -9,6 +11,7 @@ import 'package:transiter_driver/ui/common/themes.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
 import 'package:transiter_driver/ui/shared_widgets/dumb_widgets/cached_image_widget.dart';
 
+import '../../common/app_strings.dart';
 import 'my_trips_viewmodel.dart';
 
 class MyTripsView extends StackedView<MyTripsViewModel> {
@@ -43,7 +46,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                         width: 10,
                       ),
                       Text(
-                        'My Trips',
+                        ksMyTripHeader,
                         style: fugazTextStyle(fontSize: 35.sp),
                       ),
                     ],
@@ -69,7 +72,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                                         child: Column(
                                           children: [
                                             Text(
-                                              'Delete All Trips',
+                                              ksDeleteAllTripHeader,
                                               style: ktsBoldText22,
                                             ),
                                             SizedBox(
@@ -82,7 +85,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                                             Padding(
                                               padding: EdgeInsets.all(8.0),
                                               child: Text(
-                                                'are you sure you want to delete All this Trips',
+                                                ksDeleteAllTripConfirmMsg,
                                                 textAlign: TextAlign.center,
                                                 style: ktsNormaltext14.copyWith(
                                                     color: kcGrey),
@@ -129,7 +132,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                                                     ),
                                                     verticalSpaceSmall,
                                                     Text(
-                                                      "Delete",
+                                                      ksDeleteLabel,
                                                       style: ktsBoldText18
                                                           .copyWith(
                                                               color: kcPink),
@@ -162,7 +165,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                   ? Padding(
                       padding: const EdgeInsets.only(top: 40),
                       child: Text(
-                        "you have No Trips yet",
+                        ksNoTripMsg,
                         style: ktsNormaltext16.copyWith(color: kcGrey),
                       ),
                     )
@@ -237,7 +240,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                 children: [
                   ClipRRect(
                     child: CachedNetworkImageWidget(
-                      imageUrl: tripData["rider_Photo"],
+                      imageUrl: tripData[ksRiderPhoto],
                       height: 50,
                       width: 50,
                     ),
@@ -248,7 +251,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        tripData["rider_name"].toString(),
+                        tripData[ksRiderName].toString(),
                         style: ktsBoldText18,
                       ),
                       SizedBox(
@@ -277,10 +280,10 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
               ),
               Column(
                 children: [
-                  Text("Trip Cost",
+                  Text(ksTripCost,
                       style: ktsNormaltext12.copyWith(color: kcGrey)),
                   Text(
-                    "US" + "\$${tripData["tripCost"]}",
+                    "US" + "\$${tripData[ksTripCost]}",
                     style: ktsBoldText23.copyWith(
                         color: isDarkMode(context) ? kcGreen : kcDark),
                   ),
@@ -307,7 +310,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                   width: 10,
                 ),
                 Text(
-                  tripData["pickup_address"].toString(),
+                  tripData[ksPickUpAddress].toString(),
                   style: ktsNormaltext14.copyWith(color: kcGrey),
                 ),
               ],
@@ -363,7 +366,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                   width: 10,
                 ),
                 Text(
-                  tripData["destination_address"].toString(),
+                  tripData[ksDestinationAddress].toString(),
                   style: ktsNormaltext14.copyWith(color: kcGrey),
                 ),
               ],
@@ -386,7 +389,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                   width: 10,
                 ),
                 Text(
-                  tripData["person_number"].toString(),
+                  tripData[ksPassengerNumber].toString(),
                   style: ktsNormaltext16.copyWith(color: kcGrey),
                 )
               ],

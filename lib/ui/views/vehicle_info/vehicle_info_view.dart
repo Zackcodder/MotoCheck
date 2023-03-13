@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -7,18 +9,19 @@ import 'package:transiter_driver/ui/common/app_colors.dart';
 import 'package:transiter_driver/ui/common/taxi_app_icons.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
 
+import '../../common/app_strings.dart';
 import 'vehicle_info_view.form.dart';
 import 'vehicle_info_viewmodel.dart';
 
 @FormView(fields: [
   FormTextField(
-    name: 'carModel',
+    name: ksCarModelTextField,
   ),
   FormTextField(
-    name: 'carColor',
+    name: ksCarColorTextField,
   ),
   FormTextField(
-    name: 'vehicleNumber',
+    name: ksCarNumberTextField,
   ),
 ])
 class VehicleInfoView extends StackedView<VehicleInfoViewModel>
@@ -47,7 +50,7 @@ class VehicleInfoView extends StackedView<VehicleInfoViewModel>
               ),
               verticalSpaceSmall,
               Text(
-                'Enter vehicle details',
+                ksVehicleInfoPageHeader,
                 style: Theme.of(context).textTheme.displaySmall?.copyWith(
                       color: kcDark,
                     ),
@@ -61,7 +64,7 @@ class VehicleInfoView extends StackedView<VehicleInfoViewModel>
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     filled: true,
-                    hintText: "Car Model",
+                    hintText: ksCarModelHint,
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(8.r),
@@ -85,7 +88,7 @@ class VehicleInfoView extends StackedView<VehicleInfoViewModel>
                 controller: carColorController,
                 decoration: InputDecoration(
                     filled: true,
-                    hintText: "Car Color",
+                    hintText: ksCarColorHint,
                     border: OutlineInputBorder(
                         borderRadius: const BorderRadius.all(
                           const Radius.circular(8),
@@ -106,7 +109,7 @@ class VehicleInfoView extends StackedView<VehicleInfoViewModel>
                 maxLength: 11,
                 decoration: InputDecoration(
                     filled: true,
-                    hintText: "Car Number",
+                    hintText: ksCarNumberHint,
                     border: OutlineInputBorder(
                         borderRadius: const BorderRadius.all(
                           const Radius.circular(8),
@@ -125,18 +128,18 @@ class VehicleInfoView extends StackedView<VehicleInfoViewModel>
               GestureDetector(
                 onTap: () {
                   if (carModelController.text.length < 3) {
-                    viewModel.showSnackBar('Please provide a valid car model');
+                    viewModel.showSnackBar(ksCarModelErrorPrompt);
                     return;
                   }
 
                   if (carColorController.text.length < 3) {
-                    viewModel.showSnackBar('Please provide a valid car color');
+                    viewModel.showSnackBar(ksCarColorErrorPrompt);
                     return;
                   }
 
                   if (vehicleNumberController.text.length < 3) {
                     viewModel
-                        .showSnackBar('Please provide a valid vehicle number');
+                        .showSnackBar(ksCarNumberErrorPrompt);
                     return;
                   }
 
@@ -149,7 +152,7 @@ class VehicleInfoView extends StackedView<VehicleInfoViewModel>
                       color: kcDark, borderRadius: BorderRadius.circular(8)),
                   child: Center(
                     child: Text(
-                      "Next",
+                     ksNext,
                       style:
                           Theme.of(context).textTheme.headlineLarge?.copyWith(
                                 color: kcWhite,

@@ -9,8 +9,10 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-const String SubjectValueKey = 'subject';
-const String MessageValueKey = 'message';
+import '../../common/app_strings.dart';
+
+const String SubjectValueKey = ksContactUsSubjectHint;
+const String MessageValueKey = ksContactUsSubjectHint;
 
 final Map<String, TextEditingController> _ContactUsViewTextEditingControllers =
     {};
