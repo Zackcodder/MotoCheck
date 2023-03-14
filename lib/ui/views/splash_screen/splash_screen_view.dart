@@ -26,7 +26,7 @@ class SplashScreenView extends StackedView<SplashScreenViewModel> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/splashscreen2.png"),
+                image: AssetImage("assets/images/background_splashScreen.png"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -58,7 +58,7 @@ class SplashScreenView extends StackedView<SplashScreenViewModel> {
                   verticalSpace(200),
                   GestureDetector(
                     onTap: () async {
-                      viewModel.signInWithGoogle();
+                      viewModel.nToLogin();
                     },
                     child: Container(
                       height: 60,
@@ -73,26 +73,12 @@ class SplashScreenView extends StackedView<SplashScreenViewModel> {
                                 blurRadius: 20)
                           ]),
                       child: Center(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SvgPicture.asset(
-                              googleIcon,
-                              height: 30,
-                              width: 30,
-                              theme: const SvgTheme(
-                                currentColor: kcWhite,
-                              ),
-                            ),
-                            verticalSpace(20),
-                            Text(
-                              "Sign In with Jellywebb",
-                              style: ktsNormaltext16.copyWith(
-                                color: kcWhite,
-                                fontSize: 20.sp,
-                              ),
-                            ),
-                          ],
+                        child: Text(
+                          "Sign In ",
+                          style: ktsNormaltext16.copyWith(
+                            color: kcWhite,
+                            fontSize: 20.sp,
+                          ),
                         ),
                       ),
                     ),

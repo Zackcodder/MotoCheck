@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:transiter_driver/app/app.dialogs.dart';
@@ -226,7 +225,7 @@ class NewTripViewModel extends BaseViewModel {
   }
 
   Future loadMapStyles() async {
-    _darkMapStyle = await rootBundle.loadString('mapStyle/DarkMode.json');
-    _lightMapStyle = await rootBundle.loadString('mapStyle/LightMode.json');
+    // _darkMapStyle = await rootBundle.loadString('mapStyle/DarkMode.json');
+    // _lightMapStyle = await rootBundle.loadString('mapStyle/LightMode.json');
   }
 }

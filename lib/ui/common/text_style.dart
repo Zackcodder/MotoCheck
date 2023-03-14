@@ -28,6 +28,8 @@ TextStyle ktsBoldText15 = _base(_size15, _boldWeight, kcBlack);
 
 TextStyle buttonText = _base(_size18, _boldWeight, kcWhite);
 
+TextStyle kts600text20 = _base(_size20, _weight600, kcWhite);
+TextStyle kts500text20 = _base(_size20, _weight500, kcWhite);
 TextStyle ktsNormaltext16 = _base(_size16, _normalWeight, kcBlack);
 TextStyle ktsNormaltext15 = _base(_size15, _weight500, kcBlack);
 TextStyle ktsNormaltext14 = _base(_size14, _weight600, kcBlack);

@@ -17,4 +17,8 @@ class SplashScreenViewModel extends BaseViewModel {
   signInWithGoogle() {
     _navigationService.navigateTo(Routes.aboutUsView);
   }
+
+  nToLogin() {
+    _navigationService.navigateTo(Routes.loginView);
+  }
 }

@@ -12,6 +12,7 @@ import 'package:stacked_services/src/dialog/dialog_service.dart';
 import 'package:stacked_services/src/navigation/navigation_service.dart';
 import 'package:stacked_services/src/snackbar/snackbar_service.dart';
 
+import '../services/authentication_service.dart';
 import '../services/geo_location_service.dart';
 import '../services/google_map_service.dart';
 import '../services/map_service.dart';
@@ -38,4 +39,5 @@ Future<void> setupLocator(
   locator.registerLazySingleton(() => MapService());
   locator.registerLazySingleton(() => MapToolkitService());
   locator.registerLazySingleton(() => PolylinePointsService());
+  locator.registerLazySingleton(() => AuthenticationService());
 }

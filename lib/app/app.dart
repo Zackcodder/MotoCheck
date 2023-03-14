@@ -20,6 +20,8 @@ import 'package:transiter_driver/services/map_service.dart';
 import 'package:transiter_driver/services/map_toolkit_service.dart';
 import 'package:transiter_driver/services/polyline_points_service.dart';
 import 'package:transiter_driver/ui/views/my_trips/my_trips_view.dart';
+import 'package:transiter_driver/services/authentication_service.dart';
+import 'package:transiter_driver/ui/views/login/login_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -34,6 +36,7 @@ import 'package:transiter_driver/ui/views/my_trips/my_trips_view.dart';
     MaterialRoute(page: SplashScreenView),
     MaterialRoute(page: NewTripView),
     MaterialRoute(page: MyTripsView),
+    MaterialRoute(page: LoginView),
 // @stacked-route
   ],
   dependencies: [
@@ -47,6 +50,7 @@ import 'package:transiter_driver/ui/views/my_trips/my_trips_view.dart';
     LazySingleton(classType: MapService),
     LazySingleton(classType: MapToolkitService),
     LazySingleton(classType: PolylinePointsService),
+    LazySingleton(classType: AuthenticationService),
 // @stacked-service
   ],
   bottomsheets: [

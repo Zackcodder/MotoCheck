@@ -23,7 +23,8 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(left: 15, top: 15, right: 15, bottom: 10),
+          padding:
+              const EdgeInsets.only(left: 15, top: 15, right: 15, bottom: 10),
           child: Column(
             children: [
               Row(
@@ -35,12 +36,12 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                           onTap: () {
                             Navigator.pop(context);
                           },
-                          child: Icon(
+                          child: const Icon(
                             Icons.arrow_back,
                             size: 30,
                           )),
                       SizedBox(
-                        width: 10,
+                        width: 10.w,
                       ),
                       Text(
                         'My Trips',
@@ -72,15 +73,16 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                                               'Delete All Trips',
                                               style: ktsBoldText22,
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               height: 15,
                                             ),
                                             const Divider(),
-                                            SizedBox(
+                                            const SizedBox(
                                               height: 15,
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.all(8.0),
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
                                               child: Text(
                                                 'are you sure you want to delete All this Trips',
                                                 textAlign: TextAlign.center,
@@ -217,8 +219,8 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
   Widget cardItem(context, Map tripData) {
     return Container(
       height: 240,
-      padding: EdgeInsets.all(15),
-      margin: EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.all(15),
+      margin: const EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
           color: isDarkMode(context) ? kcDarkLight : kcWhite,
           borderRadius: BorderRadius.circular(15),
@@ -251,7 +253,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                         tripData["rider_name"].toString(),
                         style: ktsBoldText18,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 7,
                       ),
                       Row(
@@ -260,9 +262,9 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                             star,
                             height: 18,
                             width: 18,
-                            color: kcYellow,
+                            theme: const SvgTheme(currentColor: kcYellow),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
                           Text(
@@ -280,7 +282,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                   Text("Trip Cost",
                       style: ktsNormaltext12.copyWith(color: kcGrey)),
                   Text(
-                    "US" + "\$${tripData["tripCost"]}",
+                    "US" "\$${tripData["tripCost"]}",
                     style: ktsBoldText23.copyWith(
                         color: isDarkMode(context) ? kcGreen : kcDark),
                   ),
@@ -288,11 +290,11 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           const Divider(),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Padding(
@@ -301,9 +303,11 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
               children: [
                 SvgPicture.asset(
                   pickIcon,
-                  color: isDarkMode(context) ? Colors.white : kcDark,
+                  theme: SvgTheme(
+                    currentColor: isDarkMode(context) ? Colors.white : kcDark,
+                  ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Text(
@@ -313,40 +317,40 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Container(
             height: 4,
             width: 2,
-            margin: EdgeInsets.only(left: 15),
+            margin: const EdgeInsets.only(left: 15),
             decoration: BoxDecoration(
               color: isDarkMode(context) ? Colors.white : kcDark,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 3,
           ),
           Container(
             height: 4,
             width: 2,
-            margin: EdgeInsets.only(left: 15),
+            margin: const EdgeInsets.only(left: 15),
             decoration: BoxDecoration(
               color: isDarkMode(context) ? Colors.white : kcDark,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 3,
           ),
           Container(
             height: 4,
             width: 2,
-            margin: EdgeInsets.only(left: 15),
+            margin: const EdgeInsets.only(left: 15),
             decoration: BoxDecoration(
               color: isDarkMode(context) ? Colors.white : kcDark,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Padding(
@@ -357,9 +361,11 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                   destIcon,
                   height: 24,
                   width: 24,
-                  color: isDarkMode(context) ? Colors.white : kcDark,
+                  theme: SvgTheme(
+                    currentColor: isDarkMode(context) ? Colors.white : kcDark,
+                  ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Text(
@@ -369,7 +375,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Padding(
@@ -380,9 +386,11 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                   personIcon,
                   height: 23,
                   width: 23,
-                  color: isDarkMode(context) ? Colors.white : kcDark,
+                  theme: SvgTheme(
+                    currentColor: isDarkMode(context) ? Colors.white : kcDark,
+                  ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Text(
