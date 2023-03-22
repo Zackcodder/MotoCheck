@@ -8,16 +8,17 @@ import 'package:transiter_driver/ui/common/taxi_app_Icons.dart';
 import 'package:transiter_driver/ui/common/themes.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
 
+import '../../common/app_strings.dart';
 import 'contact_us_view.form.dart';
 import 'contact_us_viewmodel.dart';
 
 @FormView(fields: [
   FormTextField(
-    name: 'subject',
+    name: ksContactUsSubjectHint,
     // validator: AddPhoneNumberValidators.validatePhoneNumber,
   ),
   FormTextField(
-    name: 'message',
+    name: ksContactUsMessageHint,
     // validator: AddPhoneNumberValidators.validatePhoneNumber,
   ),
 ])
@@ -50,7 +51,7 @@ class ContactUsView extends StackedView<ContactUsViewModel>
                   ),
                   verticalSpace(20),
                   Text(
-                    "How Can we help you!",
+                    ksHelpQuestion,
                     style: Theme.of(context)
                         .textTheme
                         .displaySmall
@@ -65,7 +66,7 @@ class ContactUsView extends StackedView<ContactUsViewModel>
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                         filled: true,
-                        hintText: "Subject",
+                        hintText: ksContactUsSubjectHint,
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(8.r),
@@ -95,7 +96,7 @@ class ContactUsView extends StackedView<ContactUsViewModel>
                       maxLines: null,
                       decoration: const InputDecoration(
                           filled: true,
-                          hintText: "Message",
+                          hintText: ksContactUsMessageHint,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(
                                 Radius.circular(8),
@@ -118,7 +119,7 @@ class ContactUsView extends StackedView<ContactUsViewModel>
                       viewModel.sendData();
 
                       viewModel.showSnackBar(
-                          "message sent successfully, after review your message we will send you to your email account, have a nice day");
+                          ksContactUsSuccessMessage);
                     },
                     child: Container(
                       height: 50,
@@ -128,7 +129,7 @@ class ContactUsView extends StackedView<ContactUsViewModel>
                           borderRadius: BorderRadius.circular(8)),
                       child: Center(
                         child: Text(
-                          "Send",
+                          ksSendLabel,
                           style: Theme.of(context)
                               .textTheme
                               .headlineLarge

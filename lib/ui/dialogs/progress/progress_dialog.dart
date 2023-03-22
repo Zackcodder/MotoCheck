@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:transiter_driver/ui/common/app_colors.dart';
+import 'package:transiter_driver/ui/common/app_strings.dart';
 import 'package:transiter_driver/ui/common/themes.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
@@ -46,7 +47,7 @@ class ProgressDialog extends StackedView<ProgressDialogModel> {
               ),
               horizontalSpaceMedium,
               Text(
-                request.data['status'],
+                request.data[ksStatus],
                 style: const TextStyle(fontSize: 15),
               ),
             ],

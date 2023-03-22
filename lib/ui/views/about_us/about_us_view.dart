@@ -9,6 +9,7 @@ import 'package:transiter_driver/ui/common/text_style.dart';
 import 'package:transiter_driver/ui/common/themes.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
 
+import '../../common/app_strings.dart';
 import 'about_us_viewmodel.dart';
 
 class AboutUsView extends StackedView<AboutUsViewModel> {
@@ -39,10 +40,10 @@ class AboutUsView extends StackedView<AboutUsViewModel> {
                 ),
                 verticalSpaceSmall,
                 Text(
-                  "Transiter",
+                  ksCompanyName,
                   style: ktsBoldText22,
                 ),
-                Text("Lets take you there",
+                Text( ksLetTakeYouThere,
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge
@@ -68,7 +69,7 @@ class AboutUsView extends StackedView<AboutUsViewModel> {
                           theme: const SvgTheme(currentColor: kcWhite),
                         ),
                         verticalSpaceSmall,
-                        Text("Instagram",
+                        Text(ksInstagram,
                             style: Theme.of(context)
                                 .textTheme
                                 .titleLarge

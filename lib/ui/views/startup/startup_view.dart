@@ -3,6 +3,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:stacked/stacked.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
 
+import '../../common/app_strings.dart';
 import 'startup_viewmodel.dart';
 
 class StartupView extends StackedView<StartupViewModel> {
@@ -20,7 +21,7 @@ class StartupView extends StackedView<StartupViewModel> {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Text(
-              'STACKED',
+              ksStartUpHeader,
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.w900,
@@ -30,7 +31,7 @@ class StartupView extends StackedView<StartupViewModel> {
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Text(
-                  'Loading ...',
+                  ksLoading,
                   style: TextStyle(
                     fontSize: 16,
                   ),

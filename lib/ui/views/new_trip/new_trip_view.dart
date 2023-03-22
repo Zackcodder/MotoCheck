@@ -14,6 +14,7 @@ import 'package:transiter_driver/ui/common/ui_helpers.dart';
 import 'package:transiter_driver/ui/extensions/trip_details_extension.dart';
 import 'package:transiter_driver/ui/shared_widgets/dumb_widgets/cached_image_widget.dart';
 
+import '../../common/app_strings.dart';
 import 'new_trip_viewmodel.dart';
 
 class NewTripView extends StackedView<NewTripViewModel> {
@@ -127,7 +128,7 @@ class NewTripView extends StackedView<NewTripViewModel> {
                         ),
                         horizontalSpace(6),
                         Text(
-                          "Arrived in -   ",
+                          ksArrivalTime,
                           textAlign: TextAlign.center,
                           style: ktsBoldText22,
                         ),
@@ -293,11 +294,11 @@ class NewTripView extends StackedView<NewTripViewModel> {
                     Expanded(
                       child: GestureDetector(
                         onTap: () async {
-                          if (viewModel.status == 'accepted') {
-                            viewModel.setStatus = 'arrived';
+                          if (viewModel.status == ksAccepted) {
+                            viewModel.setStatus = ksArrived;
                             // rideRef.child('status').set(('arrived'));
 
-                            viewModel.setButtonTitle = 'START TRIP';
+                            viewModel.setButtonTitle = ksStartTrip;
                             viewModel.setButtonColor = kcDarkLight;
 
                             viewModel.showProgressDialog();
@@ -308,15 +309,15 @@ class NewTripView extends StackedView<NewTripViewModel> {
                             );
 
                             Navigator.pop(context);
-                          } else if (viewModel.status == 'arrived') {
-                            viewModel.setStatus = 'ontrip';
+                          } else if (viewModel.status == ksArrived) {
+                            viewModel.setStatus = ksOnTrip;
                             // rideRef.child('status').set('ontrip');
 
                             viewModel.setButtonTitle = 'END TRIP';
                             viewModel.setButtonColor = kcPink;
 
                             viewModel.startTimer();
-                          } else if (viewModel.status == 'ontrip') {
+                          } else if (viewModel.status == ksOnTrip) {
                             viewModel.endTrip(tripDetails: tripDetails);
                           }
                         },
