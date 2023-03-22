@@ -15,3 +15,6 @@ const Color kcWhiteLite = Color(0xFFF6F6F6);
 const Color kcGrey = Color(0xFFadadad);
 const Color kcWhite = Colors.white;
 const Color kcBlack = Colors.black;
+
+const Color kcTextField = Color(0xFF393535);
+const Color kcBrownish = Color(0xFF251B1B);

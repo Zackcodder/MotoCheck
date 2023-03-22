@@ -5,11 +5,11 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i12;
+import 'package:flutter/material.dart' as _i13;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i14;
-import 'package:transiter_driver/models/tripdetails.dart' as _i13;
+import 'package:stacked_services/stacked_services.dart' as _i15;
+import 'package:transiter_driver/models/tripdetails.dart' as _i14;
 import 'package:transiter_driver/ui/views/about_us/about_us_view.dart' as _i3;
 import 'package:transiter_driver/ui/views/add_phone_number/add_phone_number_view.dart'
     as _i4;
@@ -17,6 +17,7 @@ import 'package:transiter_driver/ui/views/contact_us/contact_us_view.dart'
     as _i5;
 import 'package:transiter_driver/ui/views/how_it_works/how_it_works_view.dart'
     as _i6;
+import 'package:transiter_driver/ui/views/login/login_view.dart' as _i12;
 import 'package:transiter_driver/ui/views/main_page/main_page_view.dart' as _i7;
 import 'package:transiter_driver/ui/views/my_trips/my_trips_view.dart' as _i11;
 import 'package:transiter_driver/ui/views/new_trip/new_trip_view.dart' as _i10;
@@ -47,6 +48,8 @@ class Routes {
 
   static const myTripsView = '/my-trips-view';
 
+  static const loginView = '/login-view';
+
   static const all = <String>{
     startupView,
     aboutUsView,
@@ -58,6 +61,7 @@ class Routes {
     splashScreenView,
     newTripView,
     myTripsView,
+    loginView,
   };
 }
 
@@ -102,6 +106,10 @@ class StackedRouter extends _i1.RouterBase {
     _i1.RouteDef(
       Routes.myTripsView,
       page: _i11.MyTripsView,
+    ),
+    _i1.RouteDef(
+      Routes.loginView,
+      page: _i12.LoginView,
     ),
   ];
 
@@ -177,6 +185,15 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
+    _i12.LoginView: (data) {
+      final args = data.getArgs<LoginViewArguments>(
+        orElse: () => const LoginViewArguments(),
+      );
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => _i12.LoginView(key: args.key),
+        settings: data,
+      );
+    },
   };
 
   @override
@@ -188,19 +205,19 @@ class StackedRouter extends _i1.RouterBase {
 class AddPhoneNumberViewArguments {
   const AddPhoneNumberViewArguments({this.key});
 
-  final _i12.Key? key;
+  final _i13.Key? key;
 }
 
 class ContactUsViewArguments {
   const ContactUsViewArguments({this.key});
 
-  final _i12.Key? key;
+  final _i13.Key? key;
 }
 
 class VehicleInfoViewArguments {
   const VehicleInfoViewArguments({this.key});
 
-  final _i12.Key? key;
+  final _i13.Key? key;
 }
 
 class NewTripViewArguments {
@@ -209,12 +226,18 @@ class NewTripViewArguments {
     required this.tripDetails,
   });
 
-  final _i12.Key? key;
+  final _i13.Key? key;
 
-  final _i13.TripDetailsModel tripDetails;
+  final _i14.TripDetailsModel tripDetails;
 }
 
-extension NavigatorStateExtension on _i14.NavigationService {
+class LoginViewArguments {
+  const LoginViewArguments({this.key});
+
+  final _i13.Key? key;
+}
+
+extension NavigatorStateExtension on _i15.NavigationService {
   Future<dynamic> navigateToStartupView([
     int? routerId,
     bool preventDuplicates = true,
@@ -244,7 +267,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> navigateToAddPhoneNumberView({
-    _i12.Key? key,
+    _i13.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -260,7 +283,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> navigateToContactUsView({
-    _i12.Key? key,
+    _i13.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -304,7 +327,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> navigateToVehicleInfoView({
-    _i12.Key? key,
+    _i13.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -334,8 +357,8 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> navigateToNewTripView({
-    _i12.Key? key,
-    required _i13.TripDetailsModel tripDetails,
+    _i13.Key? key,
+    required _i14.TripDetailsModel tripDetails,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -358,6 +381,22 @@ extension NavigatorStateExtension on _i14.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.myTripsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToLoginView({
+    _i13.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(Routes.loginView,
+        arguments: LoginViewArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -393,7 +432,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> replaceWithAddPhoneNumberView({
-    _i12.Key? key,
+    _i13.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -409,7 +448,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> replaceWithContactUsView({
-    _i12.Key? key,
+    _i13.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -453,7 +492,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> replaceWithVehicleInfoView({
-    _i12.Key? key,
+    _i13.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -483,8 +522,8 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> replaceWithNewTripView({
-    _i12.Key? key,
-    required _i13.TripDetailsModel tripDetails,
+    _i13.Key? key,
+    required _i14.TripDetailsModel tripDetails,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -507,6 +546,22 @@ extension NavigatorStateExtension on _i14.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.myTripsView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithLoginView({
+    _i13.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(Routes.loginView,
+        arguments: LoginViewArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

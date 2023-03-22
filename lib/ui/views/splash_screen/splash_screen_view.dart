@@ -2,10 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stacked/stacked.dart';
 import 'package:transiter_driver/ui/common/app_colors.dart';
-import 'package:transiter_driver/ui/common/taxi_app_icons.dart';
 import 'package:transiter_driver/ui/common/text_style.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
 
@@ -27,7 +25,7 @@ class SplashScreenView extends StackedView<SplashScreenViewModel> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/splashscreen2.png"),
+                image: AssetImage("assets/images/background_splashScreen.png"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -59,7 +57,7 @@ class SplashScreenView extends StackedView<SplashScreenViewModel> {
                   verticalSpace(200),
                   GestureDetector(
                     onTap: () async {
-                      viewModel.signInWithGoogle();
+                      viewModel.nToLogin();
                     },
                     child: Container(
                       height: 60,
@@ -74,26 +72,12 @@ class SplashScreenView extends StackedView<SplashScreenViewModel> {
                                 blurRadius: 20)
                           ]),
                       child: Center(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SvgPicture.asset(
-                              googleIcon,
-                              height: 30,
-                              width: 30,
-                              theme: const SvgTheme(
-                                currentColor: kcWhite,
-                              ),
-                            ),
-                            verticalSpace(20),
-                            Text(
-                              ksSiginInButtonLabelForDriverApp,
-                              style: ktsNormaltext16.copyWith(
-                                color: kcWhite,
-                                fontSize: 20.sp,
-                              ),
-                            ),
-                          ],
+                        child: Text(
+                          ksSignIn,
+                          style: ktsNormaltext16.copyWith(
+                            color: kcWhite,
+                            fontSize: 20.sp,
+                          ),
                         ),
                       ),
                     ),

@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:transiter_driver/ui/common/text_style.dart';
 import 'app_colors.dart';
+
+final shape = MaterialStateProperty.resolveWith<OutlinedBorder>(
+  (_) {
+    return RoundedRectangleBorder(borderRadius: BorderRadius.circular(6.r));
+  },
+);
 
 ThemeData lightTheme = ThemeData.light().copyWith(
     dialogBackgroundColor: Colors.white,
@@ -17,6 +24,33 @@ ThemeData lightTheme = ThemeData.light().copyWith(
       bodyLarge: ktsNormaltext14.copyWith(color: kcBlack),
       bodyMedium: ktsNormaltext13.copyWith(color: kcBlack),
       bodySmall: ktsNormaltext12.copyWith(color: kcBlack),
+      labelLarge: kts600text20,
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: kcTextField,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(6.0.r),
+        borderSide: BorderSide.none,
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.all(0),
+        foregroundColor: MaterialStateProperty.all(
+          ThemeData.dark().textTheme.labelLarge!.color,
+        ),
+        // backgroundColor: MaterialStateProperty.all(AppColors.pacificBlue),
+        backgroundColor: MaterialStateProperty.resolveWith<Color>(
+          ((Set<MaterialState> states) {
+            if (states.contains(MaterialState.disabled)) {
+              return kcBlack.withOpacity(0.4);
+            }
+            return kcBlack;
+          }),
+        ),
+        shape: shape,
+      ),
     ),
     dividerTheme: const DividerThemeData(
       color: kcGrey,
@@ -25,7 +59,7 @@ ThemeData lightTheme = ThemeData.light().copyWith(
 
 ThemeData darkTheme = ThemeData.dark().copyWith(
     dialogBackgroundColor: kcDark,
-    scaffoldBackgroundColor: kcDark,
+    scaffoldBackgroundColor: kcBrownish, // kcDark
     textTheme: TextTheme(
       displayLarge: ktsBoldText50.copyWith(color: kcWhite),
       displayMedium: ktsBoldText23.copyWith(color: kcWhite),
@@ -38,6 +72,35 @@ ThemeData darkTheme = ThemeData.dark().copyWith(
       bodyLarge: ktsNormaltext14.copyWith(color: kcWhite),
       bodyMedium: ktsNormaltext13.copyWith(color: kcWhite),
       bodySmall: ktsNormaltext12.copyWith(color: kcWhite),
+      labelLarge: kts600text20,
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: kcTextField,
+      hintStyle: kts500text20,
+      contentPadding: EdgeInsets.only(left: 28.w, top: 16.h, bottom: 13.h),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(6.0.r),
+        borderSide: BorderSide.none,
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.all(0),
+        foregroundColor: MaterialStateProperty.all(
+          ThemeData.dark().textTheme.labelLarge!.color,
+        ),
+        // backgroundColor: MaterialStateProperty.all(AppColors.pacificBlue),
+        backgroundColor: MaterialStateProperty.resolveWith<Color>(
+          ((Set<MaterialState> states) {
+            if (states.contains(MaterialState.disabled)) {
+              return kcBlack.withOpacity(0.4);
+            }
+            return kcBlack;
+          }),
+        ),
+        shape: shape,
+      ),
     ),
     dividerTheme: const DividerThemeData(
       color: kcGreyLite,

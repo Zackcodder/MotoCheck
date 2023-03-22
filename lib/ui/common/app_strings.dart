@@ -6,6 +6,7 @@ const String ksAccepted = 'Accepted';
 const String ksAccept = 'Accept';
 const String ksArrived = 'Arrived';
 const String ksArrivedCap = 'ARRIVED';
+const String ksSignIn = 'Sign In';
 
 const String ksCompanyName = "Transiter";
 const String ksCarColorHint = "Car Color";
@@ -23,15 +24,16 @@ const String ksCarNumberTextField = 'carNumber';
 const String ksCarColorTextField = 'carColor';
 const String ksCreatedAt = 'Created at';
 const String ksCashPaymentDialogHeader = 'CASH PAYMENT';
-const String ksCashPaymentDialogDesc = 'Amount above is the total fares to be charged to the rider';
+const String ksCashPaymentDialogDesc =
+    'Amount above is the total fares to be charged to the rider';
 const String ksCashCollect = "Collect";
 const String ksCancel = "Cancel";
 
 const String ksDeleteAllTripHeader = 'Delete All Trips';
-const String ksDeleteAllTripConfirmMsg ='Are you sure you want to delete All this Trips ?';
+const String ksDeleteAllTripConfirmMsg =
+    'Are you sure you want to delete All this Trips ?';
 const String ksDeleteLabel = "Delete";
 const String ksDestinationAddress = "destination_address";
-
 
 const String ksEndTrip = 'END TRIP';
 
@@ -39,21 +41,25 @@ const String ksFinished = "Finish";
 const String ksFromJellyWebb = 'From Jellywebb';
 const String ksForDriver = "For Drivers";
 
-
-
 const String ksHomeBottomSheetTitle = 'Build Great Apps!';
 const String ksHowItWorks = "How it Work Page";
 const String ksHelpQuestion = "How Can we help you!";
 const String ksHomeBottomSheetDescription =
     'Stacked is built to help you build better apps. Give us a chance and we\'ll prove it to you. Check out stacked.filledstacks.com to learn more';
 
+const String ksYourDriveApprovalIsPending = 'Your drive approval is pending';
+
+// errors
+const String ksYouHaveBeenSuspendedFromDriving =
+    'You have been suspended from driving';
+const String ksYouAreNotADriver = 'You are not a driver';
+const String ksInvalidLogin = 'invalid login';
 
 const String ksInstagramLaunchErrorMsg = 'Could not launch instagram';
 const String ksInstagram = "Instagram";
 
 const String ksLetTakeYouThere = "Lets take you there";
 const String ksLoading = 'Loading ...';
-
 
 const String ksMyTripHeader = 'My Trips';
 
@@ -63,7 +69,6 @@ const String ksNow = "Now";
 const String ksNewTrip = "NEW TRIP";
 
 const String ksOnTrip = 'onTrip';
-
 
 const String ksPassengerNumber = "person_number";
 const String ksPickUpAddress = "pickup_address";
