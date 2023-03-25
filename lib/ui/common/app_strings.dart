@@ -7,6 +7,7 @@ const String ksAccept = 'Accept';
 const String ksArrived = 'Arrived';
 const String ksArrivedCap = 'ARRIVED';
 const String ksSignIn = 'Sign In';
+const String ksEnterEmailAndPassword = 'Enter email and password';
 
 const String ksCompanyName = "Transiter";
 const String ksCarColorHint = "Car Color";
@@ -90,3 +91,9 @@ const String ksTripDetails = 'tripDetails';
 
 const String ksVehicleInfoPageHeader = 'Enter vehicle details';
 const String ksValidPhoneNumberError = 'Please provide a valid Phone Number';
+
+const String ksIAmADriver = 'I\'m a Driver';
+const String ksMyTrips = 'My Trips';
+const String ksContactUs = 'Contact us';
+const String ksSignOut = 'Sign Out';
+const String ksAreYouSureYouWantToSignout = 'are you sure you want signOut!';
