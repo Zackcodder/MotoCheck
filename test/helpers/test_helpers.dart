@@ -9,6 +9,7 @@ import 'package:transiter_driver/services/map_service.dart';
 import 'package:transiter_driver/services/map_toolkit_service.dart';
 import 'package:transiter_driver/services/polyline_points_service.dart';
 import 'package:transiter_driver/services/authentication_service.dart';
+import 'package:transiter_driver/services/local_storage_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -24,6 +25,7 @@ import 'test_helpers.mocks.dart';
   MockSpec<MapToolkitService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<PolylinePointsService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<AuthenticationService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<LocalStorageService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
@@ -37,6 +39,7 @@ void registerServices() {
   getAndRegisterMapToolkitService();
   getAndRegisterPolylinePointsService();
   getAndRegisterAuthenticationService();
+  getAndRegisterLocalStorageService();
 // @stacked-mock-register
 }
 
@@ -136,6 +139,13 @@ MockAuthenticationService getAndRegisterAuthenticationService() {
   _removeRegistrationIfExists<AuthenticationService>();
   final service = MockAuthenticationService();
   locator.registerSingleton<AuthenticationService>(service);
+  return service;
+}
+
+MockLocalStorageService getAndRegisterLocalStorageService() {
+  _removeRegistrationIfExists<LocalStorageService>();
+  final service = MockLocalStorageService();
+  locator.registerSingleton<LocalStorageService>(service);
   return service;
 }
 // @stacked-mock-create

@@ -22,6 +22,7 @@ import 'package:transiter_driver/services/polyline_points_service.dart';
 import 'package:transiter_driver/ui/views/my_trips/my_trips_view.dart';
 import 'package:transiter_driver/services/authentication_service.dart';
 import 'package:transiter_driver/ui/views/login/login_view.dart';
+import 'package:transiter_driver/services/local_storage_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -51,6 +52,10 @@ import 'package:transiter_driver/ui/views/login/login_view.dart';
     LazySingleton(classType: MapToolkitService),
     LazySingleton(classType: PolylinePointsService),
     LazySingleton(classType: AuthenticationService),
+    Presolve(
+      classType: LocalStorageService,
+      presolveUsing: LocalStorageService.getInstance,
+    ),
 // @stacked-service
   ],
   bottomsheets: [

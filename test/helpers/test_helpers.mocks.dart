@@ -15,6 +15,7 @@ import 'package:stacked_services/stacked_services.dart' as _i5;
 import 'package:transiter_driver/services/authentication_service.dart' as _i16;
 import 'package:transiter_driver/services/geo_location_service.dart' as _i12;
 import 'package:transiter_driver/services/google_map_service.dart' as _i10;
+import 'package:transiter_driver/services/local_storage_service.dart' as _i17;
 import 'package:transiter_driver/services/map_service.dart' as _i13;
 import 'package:transiter_driver/services/map_toolkit_service.dart' as _i14;
 import 'package:transiter_driver/services/polyline_points_service.dart' as _i15;
@@ -816,6 +817,15 @@ class MockGoogleMapService extends _i1.Mock implements _i10.GoogleMapService {
         ),
         returnValueForMissingStub: null,
       );
+  @override
+  dynamic convertPositionToLatLng(_i11.Position? position) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #convertPositionToLatLng,
+          [position],
+        ),
+        returnValueForMissingStub: null,
+      );
 }
 
 /// A class which mocks [GeoLocationService].
@@ -1008,4 +1018,201 @@ class MockAuthenticationService extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+}
+
+/// A class which mocks [LocalStorageService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockLocalStorageService extends _i1.Mock
+    implements _i17.LocalStorageService {
+  @override
+  _i7.Future<dynamic> setBool(
+    String? key,
+    bool? value,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setBool,
+          [
+            key,
+            value,
+          ],
+        ),
+        returnValue: _i7.Future<dynamic>.value(),
+        returnValueForMissingStub: _i7.Future<dynamic>.value(),
+      ) as _i7.Future<dynamic>);
+  @override
+  _i7.Future<dynamic> setString(
+    String? key,
+    String? value,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setString,
+          [
+            key,
+            value,
+          ],
+        ),
+        returnValue: _i7.Future<dynamic>.value(),
+        returnValueForMissingStub: _i7.Future<dynamic>.value(),
+      ) as _i7.Future<dynamic>);
+  @override
+  _i7.Future<dynamic> setDouble(
+    String? key,
+    num? value,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setDouble,
+          [
+            key,
+            value,
+          ],
+        ),
+        returnValue: _i7.Future<dynamic>.value(),
+        returnValueForMissingStub: _i7.Future<dynamic>.value(),
+      ) as _i7.Future<dynamic>);
+  @override
+  _i7.Future<dynamic> setStringList(
+    String? key,
+    List<String>? value,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setStringList,
+          [
+            key,
+            value,
+          ],
+        ),
+        returnValue: _i7.Future<dynamic>.value(),
+        returnValueForMissingStub: _i7.Future<dynamic>.value(),
+      ) as _i7.Future<dynamic>);
+  @override
+  _i7.Future<dynamic> setMap(
+    String? key,
+    Map<dynamic, dynamic>? map,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setMap,
+          [
+            key,
+            map,
+          ],
+        ),
+        returnValue: _i7.Future<dynamic>.value(),
+        returnValueForMissingStub: _i7.Future<dynamic>.value(),
+      ) as _i7.Future<dynamic>);
+  @override
+  _i7.Future<dynamic> setList(
+    String? key,
+    List<dynamic>? map,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setList,
+          [
+            key,
+            map,
+          ],
+        ),
+        returnValue: _i7.Future<dynamic>.value(),
+        returnValueForMissingStub: _i7.Future<dynamic>.value(),
+      ) as _i7.Future<dynamic>);
+  @override
+  bool? getBool(String? key) => (super.noSuchMethod(
+        Invocation.method(
+          #getBool,
+          [key],
+        ),
+        returnValueForMissingStub: null,
+      ) as bool?);
+  @override
+  String? getString(String? key) => (super.noSuchMethod(
+        Invocation.method(
+          #getString,
+          [key],
+        ),
+        returnValueForMissingStub: null,
+      ) as String?);
+  @override
+  double? getDouble(String? key) => (super.noSuchMethod(
+        Invocation.method(
+          #getDouble,
+          [key],
+        ),
+        returnValueForMissingStub: null,
+      ) as double?);
+  @override
+  List<String>? getStringList(String? key) => (super.noSuchMethod(
+        Invocation.method(
+          #getStringList,
+          [key],
+        ),
+        returnValueForMissingStub: null,
+      ) as List<String>?);
+  @override
+  _i7.Future<Map<dynamic, dynamic>> getMap(String? key) => (super.noSuchMethod(
+        Invocation.method(
+          #getMap,
+          [key],
+        ),
+        returnValue:
+            _i7.Future<Map<dynamic, dynamic>>.value(<dynamic, dynamic>{}),
+        returnValueForMissingStub:
+            _i7.Future<Map<dynamic, dynamic>>.value(<dynamic, dynamic>{}),
+      ) as _i7.Future<Map<dynamic, dynamic>>);
+  @override
+  List<dynamic> getList(String? key) => (super.noSuchMethod(
+        Invocation.method(
+          #getList,
+          [key],
+        ),
+        returnValue: <dynamic>[],
+        returnValueForMissingStub: <dynamic>[],
+      ) as List<dynamic>);
+  @override
+  _i7.Future<bool?> clearData(String? key) => (super.noSuchMethod(
+        Invocation.method(
+          #clearData,
+          [key],
+        ),
+        returnValue: _i7.Future<bool?>.value(),
+        returnValueForMissingStub: _i7.Future<bool?>.value(),
+      ) as _i7.Future<bool?>);
+  @override
+  _i7.Future<bool?> clearStorage() => (super.noSuchMethod(
+        Invocation.method(
+          #clearStorage,
+          [],
+        ),
+        returnValue: _i7.Future<bool?>.value(),
+        returnValueForMissingStub: _i7.Future<bool?>.value(),
+      ) as _i7.Future<bool?>);
+  @override
+  _i7.Future<dynamic> setInt(
+    String? key,
+    int? value,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setInt,
+          [
+            key,
+            value,
+          ],
+        ),
+        returnValue: _i7.Future<dynamic>.value(),
+        returnValueForMissingStub: _i7.Future<dynamic>.value(),
+      ) as _i7.Future<dynamic>);
+  @override
+  int? getInt(String? key) => (super.noSuchMethod(
+        Invocation.method(
+          #getInt,
+          [key],
+        ),
+        returnValueForMissingStub: null,
+      ) as int?);
 }

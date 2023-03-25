@@ -64,6 +64,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                 text: 'Send',
                 onPressed: !viewModel.isBusy
                     ? () async {
+                        // Focus.of(context).unfocus();
                         FocusScope.of(context).unfocus();
                         await viewModel.login();
                       }
