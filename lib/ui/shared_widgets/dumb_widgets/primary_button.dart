@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:transiter_driver/ui/common/app_colors.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -19,9 +22,15 @@ class PrimaryButton extends StatelessWidget {
     return SizedBox(
       width: width ?? screenWidth(context),
       height: height,
-      child: ElevatedButton(
+      child: MaterialButton(
         onPressed: onPressed,
-        child: Text(text ?? ''),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(6.0),
+        ),
+        color: kcBlue,
+        child: Text(text ?? '',
+          style: TextStyle(color: kcWhite),
+        ),
       ),
     );
   }

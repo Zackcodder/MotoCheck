@@ -10,7 +10,7 @@ import 'package:transiter_driver/ui/common/storage_keys.dart';
 class MapService {
   final log = getLogger('MapService');
   final _api = TransiterApiHandler(googleMapUrl);
-// https://maps.googleapis.com/maps/api/directions/json?origin=${startPosition.latitude},${startPosition.longitude}&destination=${endPosition.latitude},${endPosition.longitude}&mode=driving&key=$mapKey
+  // https://maps.googleapis.com/maps/api/directions/json?origin=${startPosition.latitude},${startPosition.longitude}&destination=${endPosition.latitude},${endPosition.longitude}&mode=driving&key=$mapKey
   Future getDirections({
     required List pickup, // [latitude,longitude]
     required List destination, // [latitude,longitude]

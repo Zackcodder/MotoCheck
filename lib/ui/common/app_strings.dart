@@ -1,6 +1,6 @@
 const String ksAddPhoneNumber = 'Add your Phone Number';
 const String ksAddPhoneNumberHint = "Phone Number";
-const String ksAppTitle = 'Flutter Demo';
+const String ksAppTitle = 'Transiter for Drivers';
 const String ksArrivalTime = "Arrived in -   ";
 const String ksAccepted = 'Accepted';
 const String ksAccept = 'Accept';
