@@ -81,6 +81,7 @@ ThemeData darkTheme = ThemeData.dark().copyWith(
       contentPadding: EdgeInsets.only(left: 28.w, top: 16.h, bottom: 13.h),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(6.0.r),
+        // ignore: prefer_const_constructors
         borderSide: BorderSide.none,
       ),
     ),

@@ -4,6 +4,7 @@ import 'package:transiter_driver/app/app.locator.dart';
 import 'package:transiter_driver/app/app.router.dart';
 
 class SplashScreenViewModel extends BaseViewModel {
+  
   final _navigationService = locator<NavigationService>();
 
   nToAboutUs() {
