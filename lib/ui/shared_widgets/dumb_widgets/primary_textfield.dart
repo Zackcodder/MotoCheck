@@ -22,7 +22,6 @@ class TransiterTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 49,
       width: 263,
       child: TextField(
         controller: controller,
