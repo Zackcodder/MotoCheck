@@ -18,10 +18,10 @@ import 'vehicle_info_viewmodel.dart';
     name: ksCarModelTextField,
   ),
   FormTextField(
-    name: ksCarColorTextField,
+    name: 'carColor',
   ),
   FormTextField(
-    name: ksCarNumberTextField,
+    name: 'vehicleNumber',
   ),
 ])
 class VehicleInfoView extends StackedView<VehicleInfoViewModel>
@@ -138,8 +138,7 @@ class VehicleInfoView extends StackedView<VehicleInfoViewModel>
                   }
 
                   if (vehicleNumberController.text.length < 3) {
-                    viewModel
-                        .showSnackBar(ksCarNumberErrorPrompt);
+                    viewModel.showSnackBar(ksCarNumberErrorPrompt);
                     return;
                   }
 
@@ -152,7 +151,7 @@ class VehicleInfoView extends StackedView<VehicleInfoViewModel>
                       color: kcDark, borderRadius: BorderRadius.circular(8)),
                   child: Center(
                     child: Text(
-                     ksNext,
+                      ksNext,
                       style:
                           Theme.of(context).textTheme.headlineLarge?.copyWith(
                                 color: kcWhite,

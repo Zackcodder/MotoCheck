@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "59231229216",
+    "project_id": "transiter-315910",
+    "storage_bucket": "transiter-315910.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59231229216:android:eda95cd4dfb08f9b7db345",
+        "android_client_info": {
+          "package_name": "Com.jellywebb.Transiter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59231229216-gcddo8ut31bcu9gp7rq3gt5a9gfpr276.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3Eu6eXEaNsPbYVHFxhZthSh-NU4UUM6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59231229216-gcddo8ut31bcu9gp7rq3gt5a9gfpr276.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59231229216:android:0594e6aa7a255b427db345",
+        "android_client_info": {
+          "package_name": "com.jellyweb.transiter_driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59231229216-gcddo8ut31bcu9gp7rq3gt5a9gfpr276.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3Eu6eXEaNsPbYVHFxhZthSh-NU4UUM6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59231229216-gcddo8ut31bcu9gp7rq3gt5a9gfpr276.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

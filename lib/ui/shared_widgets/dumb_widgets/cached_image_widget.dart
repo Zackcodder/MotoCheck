@@ -23,6 +23,7 @@ class CachedNetworkImageWidget extends StatelessWidget {
           (context, url) => const CircularProgressIndicator(
                 backgroundColor: kcDarkLight,
               ),
+      errorWidget: (context, val, _) => Container(),
       height: height,
       width: width,
     );

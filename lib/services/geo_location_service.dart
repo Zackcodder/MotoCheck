@@ -43,7 +43,10 @@ class GeoLocationService {
   /// returns the position of the device
   /// forceUserCurrentLocation = false would get Last Known positon
   /// forceUserCurrentLocation = true would return current positon. This is slower
-  getCurrentPosition({bool forceUseCurrentLocation = true}) async {
+  getCurrentPosition({
+    bool forceUseCurrentLocation = true,
+    bool asPosition = true,
+  }) async {
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled!) {
       // Location services are not enabled don't continue
@@ -84,6 +87,9 @@ class GeoLocationService {
       position = await Geolocator.getLastKnownPosition();
       position ??= await Geolocator.getCurrentPosition();
     }
+    if (asPosition) {
+      return position;
+    }
     return [position.latitude, position.longitude];
   }
 
@@ -92,6 +98,7 @@ class GeoLocationService {
     _snackbarService.showSnackbar(message: message);
   }
 
+  /// listens to locations. fired whenever there is a change
   Stream<Position> getPositionStream() {
     return Geolocator.getPositionStream();
   }

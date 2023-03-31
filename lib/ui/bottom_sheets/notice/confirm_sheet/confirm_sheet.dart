@@ -87,7 +87,7 @@ class ConfirmSheet extends StackedView<ConfirmSheetModel> {
                     ),
                   ),
                 ),
-                verticalSpace(16),
+                horizontalSpace(16),
                 Expanded(
                   child: GestureDetector(
                     onTap: () => completer!(
