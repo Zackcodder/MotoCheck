@@ -13,11 +13,13 @@ class LoginViewModel extends FormViewModel {
   final _authenticationService = locator<AuthenticationService>();
   final _navigationService = locator<NavigationService>();
 
-  bool hidepassword = true;
+  bool hidepassword = false;
+  bool get hidepasswords => hidepassword;
   // This is the toggle button to hide and show user password
   togglePasswordView() {
     hidepassword = !hidepassword;
   }
+
   // This is the login function button
   login() async {
     setBusy(true);
