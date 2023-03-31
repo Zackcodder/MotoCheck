@@ -24,7 +24,7 @@ ThemeData lightTheme = ThemeData.light().copyWith(
       bodyLarge: ktsNormaltext14.copyWith(color: kcBlack),
       bodyMedium: ktsNormaltext13.copyWith(color: kcBlack),
       bodySmall: ktsNormaltext12.copyWith(color: kcBlack),
-      labelLarge: kts600text20,
+      labelLarge: kts600text20.copyWith(color: kcBlack),
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
