@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:transiter_driver/app/app.locator.dart';
@@ -10,6 +12,13 @@ import '../../../app/app.router.dart';
 class LoginViewModel extends FormViewModel {
   final _authenticationService = locator<AuthenticationService>();
   final _navigationService = locator<NavigationService>();
+
+  bool hidepassword = true;
+  // This is the toggle button for hidding and showing password
+  togglePasswordView() {
+    hidepassword = !hidepassword;
+  }
+  // This is the login function button
   login() async {
     setBusy(true);
     final res = await _authenticationService.login(
@@ -17,8 +26,8 @@ class LoginViewModel extends FormViewModel {
 
     if (res.runtimeType != ErrorResponse) {
       if (res == true) {
-      //  _navigationService.navigateTo(Routes.myTripsView);
-       _navigationService.pushNamedAndRemoveUntil(Routes.mainPageView);
+        //  _navigationService.navigateTo(Routes.myTripsView);
+        _navigationService.pushNamedAndRemoveUntil(Routes.mainPageView);
         // login successful, do something
       }
     }

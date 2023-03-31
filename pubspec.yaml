@@ -29,6 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^9.1.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -71,7 +72,7 @@ flutter_native_splash:
 
 flutter_icons:
   android: 'launcher_icon'
-  image_path: 'assets/images/jellylogo.png'
+  image_path: 'assets/images/basicride111.png'
 
   stacked_generator: ^0.8.5
   mockito: ^5.3.2
