@@ -15,8 +15,7 @@ class AddPhoneNumberViewModel extends FormViewModel {
 
   showSnackbar() {
     // error snackbar
-    _snackbarService.showSnackbar(
-        message: ksValidPhoneNumberError);
+    _snackbarService.showSnackbar(message: ksValidPhoneNumberError);
   }
 }
 

@@ -43,7 +43,7 @@ class AboutUsView extends StackedView<AboutUsViewModel> {
                   ksCompanyName,
                   style: ktsBoldText22,
                 ),
-                Text( ksLetTakeYouThere,
+                Text(ksLetTakeYouThere,
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge

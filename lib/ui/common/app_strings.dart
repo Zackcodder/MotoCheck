@@ -49,12 +49,23 @@ const String ksHomeBottomSheetDescription =
     'Stacked is built to help you build better apps. Give us a chance and we\'ll prove it to you. Check out stacked.filledstacks.com to learn more';
 
 const String ksYourDriveApprovalIsPending = 'Your drive approval is pending';
+const String ksOnline = 'ONLINE';
+const String ksOffline = 'OFFLINE';
+const String ksYouAreAboutToBecomeAvailableToReceiveTripRequests =
+    'You are about to become available to receive trip requests';
+const String ksYouWouldStopReceivingNewTripRequests =
+    'you will stop receiving new trip requests';
 
 // errors
 const String ksYouHaveBeenSuspendedFromDriving =
     'You have been suspended from driving';
 const String ksYouAreNotADriver = 'You are not a driver';
 const String ksInvalidLogin = 'invalid login';
+const String ksCannotFetchDriverDetails =
+    'Cannot fetch driver details. Please login';
+
+const String ksCannotGoOnline = 'Cannot go online';
+const String ksCannotGoOffline = 'Cannot go offline';
 
 const String ksInstagramLaunchErrorMsg = 'Could not launch instagram';
 const String ksInstagram = "Instagram";

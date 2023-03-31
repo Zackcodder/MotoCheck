@@ -18,4 +18,6 @@ const Color kcBlack = Colors.black;
 
 const Color kcTextField = Color(0xFF393535);
 const Color kcBrownish = Color(0xFF251B1B);
-const Color kcOnlineColor = Color(0xffff0066);
+const Color kcOfflineColor = Color(0xffff0066);
+const Color kcOnlineColor = Color(0xff40B545);
+const Color kcMapCircleColor = Color(0xff7291FF);

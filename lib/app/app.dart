@@ -1,3 +1,4 @@
+import 'package:stacked_themes/stacked_themes.dart';
 import 'package:transiter_driver/ui/bottom_sheets/notice/confirm_sheet/confirm_sheet.dart';
 import 'package:transiter_driver/ui/dialogs/collect_payment/collect_payment_dialog.dart';
 import 'package:transiter_driver/ui/dialogs/notification/notification_dialog.dart';
@@ -23,6 +24,8 @@ import 'package:transiter_driver/ui/views/my_trips/my_trips_view.dart';
 import 'package:transiter_driver/services/authentication_service.dart';
 import 'package:transiter_driver/ui/views/login/login_view.dart';
 import 'package:transiter_driver/services/local_storage_service.dart';
+import 'package:transiter_driver/services/driver_service.dart';
+import 'package:transiter_driver/services/geofire_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -52,10 +55,13 @@ import 'package:transiter_driver/services/local_storage_service.dart';
     LazySingleton(classType: MapToolkitService),
     LazySingleton(classType: PolylinePointsService),
     LazySingleton(classType: AuthenticationService),
+    Singleton(classType: ThemeService, resolveUsing: ThemeService.getInstance),
     Presolve(
       classType: LocalStorageService,
       presolveUsing: LocalStorageService.getInstance,
     ),
+    LazySingleton(classType: DriverService),
+    LazySingleton(classType: GeofireService),
 // @stacked-service
   ],
   bottomsheets: [

@@ -1,12 +1,12 @@
 // import 'package:firebase_database/firebase_database.dart';
 
-class Driver {
+class DriverVehicleModel {
   String? carModel;
   String? carColor;
   String? vehicleNumber;
   String? phoneNumber;
 
-  Driver({
+  DriverVehicleModel({
     this.carModel,
     this.carColor,
     this.vehicleNumber,

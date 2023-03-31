@@ -13,7 +13,9 @@ import 'package:google_maps_flutter/google_maps_flutter.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i5;
 import 'package:transiter_driver/services/authentication_service.dart' as _i16;
+import 'package:transiter_driver/services/driver_service.dart' as _i18;
 import 'package:transiter_driver/services/geo_location_service.dart' as _i12;
+import 'package:transiter_driver/services/geofire_service.dart' as _i19;
 import 'package:transiter_driver/services/google_map_service.dart' as _i10;
 import 'package:transiter_driver/services/local_storage_service.dart' as _i17;
 import 'package:transiter_driver/services/map_service.dart' as _i13;
@@ -779,7 +781,7 @@ class MockGoogleMapService extends _i1.Mock implements _i10.GoogleMapService {
   @override
   dynamic locationUpdates({
     required _i11.Position? position,
-    required List<dynamic>? oldLatLng,
+    List<dynamic>? oldLatLng,
   }) =>
       super.noSuchMethod(
         Invocation.method(
@@ -856,12 +858,18 @@ class MockGeoLocationService extends _i1.Mock
         returnValueForMissingStub: false,
       ) as bool);
   @override
-  dynamic getCurrentPosition({bool? forceUseCurrentLocation = true}) =>
+  dynamic getCurrentPosition({
+    bool? forceUseCurrentLocation = true,
+    bool? asPosition = true,
+  }) =>
       super.noSuchMethod(
         Invocation.method(
           #getCurrentPosition,
           [],
-          {#forceUseCurrentLocation: forceUseCurrentLocation},
+          {
+            #forceUseCurrentLocation: forceUseCurrentLocation,
+            #asPosition: asPosition,
+          },
         ),
         returnValueForMissingStub: null,
       );
@@ -1026,6 +1034,12 @@ class MockAuthenticationService extends _i1.Mock
 class MockLocalStorageService extends _i1.Mock
     implements _i17.LocalStorageService {
   @override
+  _i7.Future<String?> get getDriverId => (super.noSuchMethod(
+        Invocation.getter(#getDriverId),
+        returnValue: _i7.Future<String?>.value(),
+        returnValueForMissingStub: _i7.Future<String?>.value(),
+      ) as _i7.Future<String?>);
+  @override
   _i7.Future<dynamic> setBool(
     String? key,
     bool? value,
@@ -1154,16 +1168,13 @@ class MockLocalStorageService extends _i1.Mock
         returnValueForMissingStub: null,
       ) as List<String>?);
   @override
-  _i7.Future<Map<dynamic, dynamic>> getMap(String? key) => (super.noSuchMethod(
+  dynamic getMap(String? key) => super.noSuchMethod(
         Invocation.method(
           #getMap,
           [key],
         ),
-        returnValue:
-            _i7.Future<Map<dynamic, dynamic>>.value(<dynamic, dynamic>{}),
-        returnValueForMissingStub:
-            _i7.Future<Map<dynamic, dynamic>>.value(<dynamic, dynamic>{}),
-      ) as _i7.Future<Map<dynamic, dynamic>>);
+        returnValueForMissingStub: null,
+      );
   @override
   List<dynamic> getList(String? key) => (super.noSuchMethod(
         Invocation.method(
@@ -1215,4 +1226,54 @@ class MockLocalStorageService extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       ) as int?);
+}
+
+/// A class which mocks [DriverService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockDriverService extends _i1.Mock implements _i18.DriverService {
+  @override
+  _i4.TransiterApiHandler get api => (super.noSuchMethod(
+        Invocation.getter(#api),
+        returnValue: _FakeTransiterApiHandler_3(
+          this,
+          Invocation.getter(#api),
+        ),
+        returnValueForMissingStub: _FakeTransiterApiHandler_3(
+          this,
+          Invocation.getter(#api),
+        ),
+      ) as _i4.TransiterApiHandler);
+  @override
+  dynamic updateDriverLiveStatus(bool? online) => super.noSuchMethod(
+        Invocation.method(
+          #updateDriverLiveStatus,
+          [online],
+        ),
+        returnValueForMissingStub: null,
+      );
+}
+
+/// A class which mocks [GeofireService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGeofireService extends _i1.Mock implements _i19.GeofireService {
+  @override
+  _i7.Future<bool> goOnline() => (super.noSuchMethod(
+        Invocation.method(
+          #goOnline,
+          [],
+        ),
+        returnValue: _i7.Future<bool>.value(false),
+        returnValueForMissingStub: _i7.Future<bool>.value(false),
+      ) as _i7.Future<bool>);
+  @override
+  _i7.Future<bool> goOffline() => (super.noSuchMethod(
+        Invocation.method(
+          #goOffline,
+          [],
+        ),
+        returnValue: _i7.Future<bool>.value(false),
+        returnValueForMissingStub: _i7.Future<bool>.value(false),
+      ) as _i7.Future<bool>);
 }

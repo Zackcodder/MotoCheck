@@ -16,12 +16,27 @@ class GoogleMapService {
 
   final Set<Marker> _markers = <Marker>{};
   final Set<Circle> _circles = <Circle>{};
+
   final Set<Polyline> _polyLines = <Polyline>{};
+
+  Set<Circle> mainPageCircles(Position? pos) => pos == null
+      ? {}
+      : {
+          Circle(
+            circleId: const CircleId('current'),
+            strokeColor: kcMapCircleColor.withOpacity(0.5),
+            strokeWidth: 1,
+            radius: 150,
+            center: convertPositionToLatLng(pos),
+            fillColor: kcMapCircleColor.withOpacity(0.17),
+          )
+        };
 
   CameraPosition? cameraPosition;
 
-  CameraUpdate get cameraUpdate =>
-      CameraUpdate.newCameraPosition(cameraPosition!);
+  CameraUpdate get cameraUpdate {
+    return CameraUpdate.newCameraPosition(cameraPosition!);
+  }
 
   LatLngBounds? bounds;
 
@@ -48,26 +63,42 @@ class GoogleMapService {
     }
   }
 
+  locationUpdateForMainPage({
+    required Position position,
+  }) {
+    LatLng pos = LatLng(position.latitude, position.longitude);
+    cameraPosition = CameraPosition(target: pos, zoom: 17);
+  }
+
+  updateCameraPosition(Position position) {
+    LatLng pos = LatLng(position.latitude, position.longitude);
+    CameraPosition(target: pos, zoom: 17);
+  }
+
   locationUpdates({
     required Position position,
-    required List oldLatLng,
+    List? oldLatLng,
   }) async {
-    var rotation = _mapToolkitService.getMarkerRotation(
-        oldLatLng[0], oldLatLng[1], position.latitude, position.longitude);
-
     LatLng pos = LatLng(position.latitude, position.longitude);
-    Marker mark = Marker(
-      markerId: const MarkerId('moving'),
-      position: pos,
-      icon: movingMarkerIcon ?? BitmapDescriptor.defaultMarker,
-      rotation: rotation,
-      infoWindow: const InfoWindow(title: 'Current Location'),
-    );
 
+    if (oldLatLng != null) {
+      var rotation = _mapToolkitService.getMarkerRotation(
+          oldLatLng[0], oldLatLng[1], position.latitude, position.longitude);
+
+      Marker mark = Marker(
+        markerId: const MarkerId('moving'),
+        position: pos,
+        icon: movingMarkerIcon ?? BitmapDescriptor.defaultMarker,
+        rotation: rotation,
+        infoWindow: const InfoWindow(title: 'Current Location'),
+      );
+
+      // remove previous markers
+      _markers.removeWhere((marker) => marker.markerId.value == 'moving');
+      _markers.add(mark);
+    }
     cameraPosition = CameraPosition(target: pos, zoom: 17);
-    // remove previous markers
-    _markers.removeWhere((marker) => marker.markerId.value == 'moving');
-    _markers.add(mark);
+    print('assfasfasf $cameraPosition');
   }
 
   setPolyLine(List<LatLng> polylineCoordinates) {
@@ -149,4 +180,7 @@ class GoogleMapService {
     _circles.add(pickupCircle);
     _circles.add(destinationCircle);
   }
+
+  convertPositionToLatLng(Position position) =>
+      LatLng(position.latitude, position.longitude);
 }
