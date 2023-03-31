@@ -14,7 +14,7 @@ class LoginViewModel extends FormViewModel {
   final _navigationService = locator<NavigationService>();
 
   bool hidepassword = true;
-  // This is the toggle button for hidding and showing password
+  // This is the toggle button to hide and show user password
   togglePasswordView() {
     hidepassword = !hidepassword;
   }

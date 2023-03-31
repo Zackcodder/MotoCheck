@@ -47,15 +47,18 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               verticalSpaceMassive,
+
               // This is the app logo on the top of the login page
               Image.asset("assets/images/jellylogo.png"),
               verticalSpaceSmall,
+
               // This is the login text on the welcome page below the app logo
               Text(
                 'Login With Jellywebb',
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
               verticalSpaceLarge,
+
               //This is for the email test field
               TransiterTextField(
                 hintText: 'Email Address',
@@ -63,6 +66,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                 controller: emailController,
               ),
               verticalSpaceMedium,
+
               //This is for the password text field
               TransiterTextField(
                 controller: passwordController,
@@ -81,6 +85,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                 obscureText: viewModel.hidepassword,
               ),
               verticalSpace(35),
+
               // This is the login button 
               PrimaryButton(
                 height: 48.h,
@@ -94,6 +99,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                     : null,
               ),
               verticalSpace(35),
+
               // welcome text for creating account for new user
               Text("One Jellywebb account connects you with the world. Don't have a Jellywebb account?",
                style: Theme.of(context).textTheme.bodyLarge,),
