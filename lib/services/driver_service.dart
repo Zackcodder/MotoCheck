@@ -5,6 +5,7 @@ import 'package:transiter_driver/app/app.locator.dart';
 import 'package:transiter_driver/app/app.router.dart';
 import 'package:transiter_driver/models/driver_model.dart';
 import 'package:transiter_driver/models/error_response.dart';
+import 'package:transiter_driver/models/ride_history_model.dart';
 import 'package:transiter_driver/services/geo_location_service.dart';
 import 'package:transiter_driver/ui/common/api_handlers/api_routes.dart';
 import 'package:transiter_driver/ui/common/api_handlers/transiter_api.dart';
@@ -71,5 +72,38 @@ class DriverService {
       await _storageService.setMap(driveObjectKey, model.toJson());
       return true;
     }
+  }
+
+  // fetch driver details
+  fetchTripHistory() async {
+    String? driverId = _storageService.getString(loginIdKey);
+
+    if (driverId == null || driverId.isEmpty) {
+      await _storageService.clearStorage();
+
+      _navigationService.pushNamedAndRemoveUntil(Routes.loginView);
+      _snackbarService.showSnackbar(message: ksCannotFetchDriverDetails);
+    }
+    final res =
+        await api.get('${ApiRoutes.rideHistory}?UID=$driverId&getrides');
+    if (res.runtimeType != ErrorResponse) {
+      final response = json.decode(res.rawResponse.toString());
+      if (response.runtimeType == List<dynamic>) {
+        List<RideHistoryModel> list = response
+            .map((e) => RideHistoryModel.fromJson(e))
+            .cast<RideHistoryModel>()
+            .toList();
+
+        await _storageService.setList(driverRideHistoryKey, list);
+        return list;
+      } else {
+        await _storageService.setList(
+            driverRideHistoryKey, [].cast<RideHistoryModel>());
+
+        return [].cast<RideHistoryModel>();
+      }
+    }
+
+    return false;
   }
 }

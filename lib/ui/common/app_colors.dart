@@ -21,3 +21,5 @@ const Color kcBrownish = Color(0xFF251B1B);
 const Color kcOfflineColor = Color(0xffff0066);
 const Color kcOnlineColor = Color(0xff40B545);
 const Color kcMapCircleColor = Color(0xff7291FF);
+const Color kcOverlayColor = Color(0xffD9D9D9);
+const Color kcGreyish = Color(0xff979797);

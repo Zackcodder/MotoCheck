@@ -126,7 +126,8 @@ class _MainPageViewState extends State<MainPageView> {
                                 ),
                       ),
                       onTap: () {
-                        Navigator.pushNamed(context, ' MyTripsPage.id');
+                        viewModel.nToMyTrips();
+                        // Navigator.pushNamed(context, ' MyTripsPage.id');
                       },
                     ),
                     ListTile(
@@ -221,7 +222,8 @@ class _MainPageViewState extends State<MainPageView> {
                                             verticalSpace(30),
 
                                             GestureDetector(
-                                              onTap: () {
+                                              onTap: () async {
+                                                await viewModel.signOut();
                                                 // signOut();
                                                 // signOutGoogle();
                                                 // Navigator.pop(context);

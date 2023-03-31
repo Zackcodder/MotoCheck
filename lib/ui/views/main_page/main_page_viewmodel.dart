@@ -6,6 +6,7 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 import 'package:transiter_driver/app/app.bottomsheets.dart';
 import 'package:transiter_driver/app/app.locator.dart';
+import 'package:transiter_driver/app/app.router.dart';
 import 'package:transiter_driver/models/driver_model.dart';
 import 'package:transiter_driver/services/driver_service.dart';
 import 'package:transiter_driver/services/geo_location_service.dart';
@@ -30,6 +31,8 @@ class MainPageViewModel extends BaseViewModel {
   final _bottomSheetService = locator<BottomSheetService>();
 
   final _themeService = locator<ThemeService>();
+
+  final _navigationService = locator<NavigationService>();
 
   DriverModel driver = DriverModel();
 
@@ -169,4 +172,14 @@ class MainPageViewModel extends BaseViewModel {
   }
 
   get circles => _googleMapService.mainPageCircles(_currentPosition);
+
+  // navigates to trips history
+  nToMyTrips() {
+    _navigationService.navigateTo(Routes.myTripsView);
+  }
+
+  signOut() async {
+    await _storageService.clearStorage();
+    _navigationService.pushNamedAndRemoveUntil(Routes.loginView);
+  }
 }

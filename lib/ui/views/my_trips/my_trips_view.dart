@@ -9,13 +9,21 @@ import 'package:transiter_driver/ui/common/taxi_app_icons.dart';
 import 'package:transiter_driver/ui/common/text_style.dart';
 import 'package:transiter_driver/ui/common/themes.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
+import 'package:transiter_driver/ui/extensions/rider_history_list_extension.dart';
 import 'package:transiter_driver/ui/shared_widgets/dumb_widgets/cached_image_widget.dart';
+import 'package:transiter_driver/ui/shared_widgets/dumb_widgets/icon_overlay.dart';
 
 import '../../common/app_strings.dart';
 import 'my_trips_viewmodel.dart';
 
 class MyTripsView extends StackedView<MyTripsViewModel> {
   const MyTripsView({Key? key}) : super(key: key);
+
+  @override
+  Future<void> onViewModelReady(MyTripsViewModel viewModel) async {
+    await viewModel.fetchTripHistory();
+    super.onViewModelReady(viewModel);
+  }
 
   @override
   Widget builder(
@@ -163,7 +171,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
               ),
               verticalSpace(20),
               // dataSnapshot?.value == null
-              true
+              viewModel.rideHistoryList.isEmpty
                   ? Padding(
                       padding: const EdgeInsets.only(top: 40),
                       child: Text(
@@ -172,39 +180,86 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                       ),
                     )
                   : Expanded(
-                      child: Container(
-                          // child: FirebaseAnimatedList(
-                          //   query: ref,
-                          //   shrinkWrap: true,
-                          //   padding: EdgeInsets.all(12),
-                          //   itemBuilder: (BuildContext context,
-                          //       DataSnapshot snapshot,
-                          //       Animation<double> animation,
-                          //       int index) {
-                          //     var tripData = snapshot.value;
-                          //     tripData['key'] = snapshot.key;
-                          //     return Column(
-                          //       crossAxisAlignment: CrossAxisAlignment.start,
-                          //       children: [
-                          //         Container(
-                          //           width: 130,
-                          //           margin: EdgeInsets.only(left: 10),
-                          //           child: Center(
-                          //             child: Text(
-                          //               "${tripData["created_at"].toString().substring(0, 16)}",
-                          //               style: ktsNormaltext16,
-                          //             ),
-                          //           ),
-                          //         ),
-                          //         SizedBox(
-                          //           height: 10,
-                          //         ),
-                          //         cardItem(context, tripData),
-                          //       ],
-                          //     );
-                          //   },
-                          // ),
-                          ),
+                      child: ListView.separated(
+                        shrinkWrap: true,
+                        padding: EdgeInsets.all(12),
+                        itemBuilder: (BuildContext context, int index) {
+                          return Row(
+                            children: [
+                              CircularIconOverlay(
+                                color: isDarkMode(context)
+                                    ? kcWhite.withOpacity(0.8)
+                                    : kcOverlayColor.withOpacity(0.5),
+                                height: 40.h,
+                                width: 40.w,
+                                child: SvgPicture.asset(
+                                  carIcon,
+                                  width: 18.w,
+                                  height: 18.h,
+                                ),
+                              ),
+                              horizontalSpace(12),
+                              Flexible(
+                                fit: FlexFit.tight,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      viewModel.rideHistoryList
+                                          .destination(index),
+                                      style:
+                                          Theme.of(context).textTheme.bodyLarge,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    verticalSpace(3),
+                                    Text(
+                                      '${viewModel.rideHistoryList.tripDate(index)}, ${viewModel.rideHistoryList.pickupTime(index)}',
+                                      style: kts500text20.copyWith(
+                                        fontSize: 12.sp,
+                                        color: isDarkMode(context)
+                                            ? kcWhite.withOpacity(0.6)
+                                            : kcBlack.withOpacity(0.6),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    // cardItem(context, tripData),
+                                  ],
+                                ),
+                              ),
+                              horizontalSpace(10),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    viewModel.rideHistoryList.amount(index),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelLarge!
+                                        .copyWith(fontSize: 16),
+                                  ),
+                                  Text(
+                                    viewModel.rideHistoryList.tripStatus(index),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelLarge!
+                                        .copyWith(
+                                          fontSize: 10,
+                                          color: isDarkMode(context)
+                                              ? kcGreyish
+                                              : kcBlack.withOpacity(0.6),
+                                        ),
+                                    textAlign: TextAlign.end,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          );
+                        },
+                        separatorBuilder: (context, index) => const Divider(),
+                        itemCount: viewModel.rideHistoryList.length,
+                      ),
                     ),
             ],
           ),

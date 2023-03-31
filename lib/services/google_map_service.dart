@@ -98,7 +98,6 @@ class GoogleMapService {
       _markers.add(mark);
     }
     cameraPosition = CameraPosition(target: pos, zoom: 17);
-    print('assfasfasf $cameraPosition');
   }
 
   setPolyLine(List<LatLng> polylineCoordinates) {

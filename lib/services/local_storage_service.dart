@@ -46,7 +46,7 @@ class LocalStorageService {
   }
 
   Future setList(String key, List<dynamic> map) async {
-    String value = map.toString();
+    String value = json.encode(map);
     await _preferences!.setString(key, value);
   }
 
@@ -73,7 +73,11 @@ class LocalStorageService {
 
   List<dynamic> getList(String key) {
     String? value = _preferences?.getString(key);
-    return value as List<dynamic>;
+    if (value != null) {
+      return json.decode(value);
+    }
+    return [];
+    // value as List<dynamic>;
   }
 
   Future<bool?> clearData(String key) async {
