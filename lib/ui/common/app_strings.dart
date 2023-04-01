@@ -6,7 +6,7 @@ const String ksAccepted = 'Accepted';
 const String ksAccept = 'Accept';
 const String ksArrived = 'Arrived';
 const String ksArrivedCap = 'ARRIVED';
-const String ksSignIn = 'Sign In';
+const String ksSignIn = 'Get In';
 const String ksEnterEmailAndPassword = 'Enter email and password';
 
 const String ksCompanyName = "Transiter";

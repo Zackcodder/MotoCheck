@@ -63,13 +63,16 @@ class _MainPageViewState extends State<MainPageView> {
                     Container(
                       color: isDarkMode(context) ? kcDark : kcWhite,
                       height: 160,
+                      //Drawer header containing the driver image, and name
                       child: DrawerHeader(
                         decoration: BoxDecoration(
                           color: isDarkMode(context) ? kcDark : kcWhite,
                         ),
                         child: Row(
                           children: <Widget>[
+                            //Driver profile picture
                             ClipRRect(
+                              // ignore: sort_child_properties_last
                               child: CachedNetworkImageWidget(
                                 imageUrl: viewModel.driver
                                     .driverPhotoUrl, // 'currentFirebaseUser.currentUser.photoURL',
@@ -83,6 +86,7 @@ class _MainPageViewState extends State<MainPageView> {
                               borderRadius: BorderRadius.circular(100),
                             ),
                             horizontalSpace(15),
+                            // driver name and lable
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,12 +114,13 @@ class _MainPageViewState extends State<MainPageView> {
                       ),
                     ),
                     verticalSpaceSmall,
+                    //Driver trips button
                     ListTile(
                       leading: SvgPicture.asset(
                         carIcon,
                         height: 28,
                         width: 28,
-                        colorFilter:
+                      colorFilter:
                             const ColorFilter.mode(kcGrey, BlendMode.srcIn),
                       ),
                       title: Text(
@@ -130,6 +135,7 @@ class _MainPageViewState extends State<MainPageView> {
                         // Navigator.pushNamed(context, ' MyTripsPage.id');
                       },
                     ),
+                    // How page works button
                     ListTile(
                       leading: SvgPicture.asset(
                         help,
@@ -149,6 +155,7 @@ class _MainPageViewState extends State<MainPageView> {
                         Navigator.pushNamed(context, ' HowItWorkPage.id');
                       },
                     ),
+                    //Contact button 
                     ListTile(
                       leading: SvgPicture.asset(
                         contactUsIcon,
@@ -169,6 +176,8 @@ class _MainPageViewState extends State<MainPageView> {
                       },
                     ),
                     verticalSpace(40),
+
+                    //SignOut button
                     ListTile(
                       leading: SvgPicture.asset(
                         signOutIcon,
@@ -185,6 +194,7 @@ class _MainPageViewState extends State<MainPageView> {
                                 ),
                       ),
                       onTap: () {
+                        //SignOut Confirmation Popup box
                         showDialog(
                             context: context,
                             builder: (context) => Dialog(
