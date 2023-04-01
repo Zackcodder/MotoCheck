@@ -178,6 +178,16 @@ class MainPageViewModel extends BaseViewModel {
     _navigationService.navigateTo(Routes.myTripsView);
   }
 
+  //navigates to help page
+  nToHelpPage() {
+    _navigationService.navigateTo(Routes.howItWorksView);
+  }
+
+  //navigates to contact page
+  nToContactPage() {
+    _navigationService.navigateTo(Routes.contactUsView);
+  }
+
   signOut() async {
     await _storageService.clearStorage();
     _navigationService.pushNamedAndRemoveUntil(Routes.loginView);

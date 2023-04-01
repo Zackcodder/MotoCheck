@@ -54,7 +54,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
 
               // This is the login text on the welcome page below the app logo
               Text(
-                'Login With Jellywebb',
+                'Continue With Jellywebb',
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
               verticalSpaceLarge,

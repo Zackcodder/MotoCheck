@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:transiter_driver/ui/common/app_colors.dart';
 
+import '../../common/themes.dart';
+
 class TransiterTextField extends StatelessWidget {
   final String? hintText;
   final bool obscureText;
@@ -25,7 +27,9 @@ class TransiterTextField extends StatelessWidget {
       width: 263,
       child: TextField(
         controller: controller,
-        style: TextStyle(
+        style:
+        TextStyle(
+          color: Colors.black,
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
         ),

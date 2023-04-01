@@ -132,10 +132,10 @@ class _MainPageViewState extends State<MainPageView> {
                       ),
                       onTap: () {
                         viewModel.nToMyTrips();
-                        // Navigator.pushNamed(context, ' MyTripsPage.id');
                       },
                     ),
-                    // How page works button
+
+                    // Help
                     ListTile(
                       leading: SvgPicture.asset(
                         help,
@@ -152,10 +152,32 @@ class _MainPageViewState extends State<MainPageView> {
                                 ),
                       ),
                       onTap: () {
-                        Navigator.pushNamed(context, ' HowItWorkPage.id');
+                        viewModel.nToHelpPage();
                       },
                     ),
-                    //Contact button 
+
+                    // Driver Wallet
+                    ListTile(
+                      leading: SvgPicture.asset(
+                        creditCard,
+                        height: 25,
+                        width: 25,
+                        colorFilter:
+                            const ColorFilter.mode(kcGrey, BlendMode.srcIn),
+                      ),
+                      title: Text(
+                        ksWallet,
+                        style:
+                            Theme.of(context).textTheme.headlineLarge!.copyWith(
+                                  color: isDarkMode(context) ? kcWhite : kcDark,
+                                ),
+                      ),
+                      onTap: () {
+                        // Navigator.pushNamed(context, ' HowItWorkPage.id');
+                      },
+                    ),
+
+                    //Contact button
                     ListTile(
                       leading: SvgPicture.asset(
                         contactUsIcon,
@@ -172,10 +194,10 @@ class _MainPageViewState extends State<MainPageView> {
                                 ),
                       ),
                       onTap: () {
-                        // Navigator.pushNamed(context, ContactUsPage.id);
+                        viewModel.nToContactPage();
                       },
                     ),
-                    verticalSpace(40),
+                    verticalSpace(170),
 
                     //SignOut button
                     ListTile(
@@ -358,42 +380,47 @@ class _MainPageViewState extends State<MainPageView> {
               Positioned(
                 top: 40,
                 left: 20,
-                child: GestureDetector(
-                  onTap: () {
-                    // scaffoldKey.currentState.openDrawer();
-                  },
-                  child: Container(
-                    height: 60,
-                    width: 60,
-                    decoration: BoxDecoration(
-                        color: kcWhite,
-                        borderRadius: BorderRadius.circular(50),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black26.withOpacity(0.1),
-                              blurRadius: 5.0,
-                              spreadRadius: 0.5,
-                              offset: const Offset(
-                                0.7,
-                                0.7,
-                              ))
-                        ]),
-                    child: CircleAvatar(
-                        backgroundColor: kcWhite,
-                        child: ClipRRect(
-                          child: CachedNetworkImageWidget(
-                            imageUrl: viewModel.driver
-                                .driverPhotoUrl, //'currentFirebaseUser.currentUser.photoURL',
-                            placeholder: (context, url) =>
-                                const CircularProgressIndicator(
-                              backgroundColor: kcDarkLight,
-                            ),
-                            height: 60,
-                            width: 60,
-                          ),
-                          borderRadius: BorderRadius.circular(100),
-                        )),
-                  ),
+                child: Builder(
+                  builder: (context) {
+                    return GestureDetector(
+                      onTap: () {
+                        Scaffold.of(context).openDrawer();
+                        // scaffoldKey.currentState.openDrawer();
+                      },
+                      child: Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                            color: kcWhite,
+                            borderRadius: BorderRadius.circular(50),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black26.withOpacity(0.1),
+                                  blurRadius: 5.0,
+                                  spreadRadius: 0.5,
+                                  offset: const Offset(
+                                    0.7,
+                                    0.7,
+                                  ))
+                            ]),
+                        child: CircleAvatar(
+                            backgroundColor: kcWhite,
+                            child: ClipRRect(
+                              child: CachedNetworkImageWidget(
+                                imageUrl: viewModel.driver
+                                    .driverPhotoUrl, //'currentFirebaseUser.currentUser.photoURL',
+                                placeholder: (context, url) =>
+                                    const CircularProgressIndicator(
+                                  backgroundColor: kcDarkLight,
+                                ),
+                                height: 60,
+                                width: 60,
+                              ),
+                              borderRadius: BorderRadius.circular(100),
+                            )),
+                      ),
+                    );
+                  }
                 ),
               ),
 

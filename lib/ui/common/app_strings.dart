@@ -6,8 +6,7 @@ const String ksAccepted = 'Accepted';
 const String ksAccept = 'Accept';
 const String ksArrived = 'Arrived';
 const String ksArrivedCap = 'ARRIVED';
-const String ksSignIn = 'Get In';
-const String ksEnterEmailAndPassword = 'Enter email and password';
+const String ksAreYouSureYouWantToSignout = 'are you sure you want signOut!';
 
 const String ksCompanyName = "Transiter";
 const String ksCarColorHint = "Car Color";
@@ -29,6 +28,7 @@ const String ksCashPaymentDialogDesc =
     'Amount above is the total fares to be charged to the rider';
 const String ksCashCollect = "Collect";
 const String ksCancel = "Cancel";
+const String ksContactUs = 'Contact us';
 
 const String ksDeleteAllTripHeader = 'Delete All Trips';
 const String ksDeleteAllTripConfirmMsg =
@@ -37,6 +37,7 @@ const String ksDeleteLabel = "Delete";
 const String ksDestinationAddress = "destination_address";
 
 const String ksEndTrip = 'END TRIP';
+const String ksEnterEmailAndPassword = 'Enter email and password';
 
 const String ksFinished = "Finish";
 const String ksFromJellyWebb = 'From Jellywebb';
@@ -69,11 +70,13 @@ const String ksCannotGoOffline = 'Cannot go offline';
 
 const String ksInstagramLaunchErrorMsg = 'Could not launch instagram';
 const String ksInstagram = "Instagram";
+const String ksIAmADriver = 'Driver';
 
 const String ksLetTakeYouThere = "Lets take you there";
 const String ksLoading = 'Loading ...';
 
 const String ksMyTripHeader = 'My Trips';
+const String ksMyTrips = 'My Trips';
 
 const String ksNoTripMsg = "you have No Trips yet";
 const String ksNext = 'Next';
@@ -96,6 +99,8 @@ const String ksSendLabel = "Send";
 const String ksStatus = 'status';
 const String ksSiginInButtonLabelForDriverApp = "Sign In with Jellywebb";
 const String ksStartUpHeader = 'STACKED';
+const String ksSignIn = 'Get In';
+const String ksSignOut = 'Sign Out';
 
 const String ksTripCost = "Trip Cost";
 const String ksTripDetails = 'tripDetails';
@@ -103,8 +108,5 @@ const String ksTripDetails = 'tripDetails';
 const String ksVehicleInfoPageHeader = 'Enter vehicle details';
 const String ksValidPhoneNumberError = 'Please provide a valid Phone Number';
 
-const String ksIAmADriver = 'I\'m a Driver';
-const String ksMyTrips = 'My Trips';
-const String ksContactUs = 'Contact us';
-const String ksSignOut = 'Sign Out';
-const String ksAreYouSureYouWantToSignout = 'are you sure you want signOut!';
+
+const String ksWallet = 'Wallet';
