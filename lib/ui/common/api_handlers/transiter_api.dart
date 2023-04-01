@@ -1,11 +1,13 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, depend_on_referenced_packages
 
 import 'dart:async';
-import 'dart:io';
 import 'dart:convert';
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:stacked_services/stacked_services.dart';
+
 import 'package:transiter_driver/app/app.locator.dart';
 import 'package:transiter_driver/app/app.logger.dart';
 
