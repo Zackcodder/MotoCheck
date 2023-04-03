@@ -89,7 +89,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               // This is the login button 
               PrimaryButton(
                 height: 48.h,
-                width: 263,
+                width: 300,
                 text: 'Get in',
                 onPressed: !viewModel.isBusy
                     ? () async {
@@ -102,8 +102,11 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               verticalSpace(35),
 
               // welcome text for creating account for new user
-              Text("One Jellywebb account connects you with the world. Don't have a Jellywebb account?",
-               style: Theme.of(context).textTheme.bodyLarge,),
+              Padding(
+                padding: const EdgeInsets.only(left: 20,),
+                child: Text("One Jellywebb account connects you with the world. Don't have a Jellywebb account?",
+                 style: Theme.of(context).textTheme.bodyLarge,),
+              ),
             ],
           ),
         ),

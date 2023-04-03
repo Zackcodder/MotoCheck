@@ -190,6 +190,6 @@ class MainPageViewModel extends BaseViewModel {
 
   signOut() async {
     await _storageService.clearStorage();
-    _navigationService.pushNamedAndRemoveUntil(Routes.loginView);
+    _navigationService.pushNamedAndRemoveUntil(Routes.splashScreenView);
   }
 }

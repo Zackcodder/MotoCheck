@@ -24,7 +24,7 @@ class TransiterTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 263,
+      width: 300,
       child: TextField(
         controller: controller,
         style:
@@ -43,11 +43,11 @@ class TransiterTextField extends StatelessWidget {
           borderRadius: BorderRadius.all(
           Radius.circular(6.0),
           ),
-          borderSide: BorderSide(
-          style: BorderStyle.solid,
-          color: kcTextFieldBorder,
-          width: 2.0,
-          ),
+          // borderSide: BorderSide(
+          // style: BorderStyle.none,
+          // color: kcTextFieldBorder,
+          // width: 0.5,
+          // ),
           ),
         ),
       ),

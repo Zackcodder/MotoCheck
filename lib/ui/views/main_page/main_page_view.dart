@@ -70,6 +70,7 @@ class _MainPageViewState extends State<MainPageView> {
                         ),
                         child: Row(
                           children: <Widget>[
+
                             //Driver profile picture
                             ClipRRect(
                               // ignore: sort_child_properties_last
@@ -86,7 +87,7 @@ class _MainPageViewState extends State<MainPageView> {
                               borderRadius: BorderRadius.circular(100),
                             ),
                             horizontalSpace(15),
-                            // driver name and lable
+                            // driver name and label
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,6 +110,7 @@ class _MainPageViewState extends State<MainPageView> {
                                 ),
                               ],
                             )
+                         
                           ],
                         ),
                       ),
@@ -123,6 +125,7 @@ class _MainPageViewState extends State<MainPageView> {
                       colorFilter:
                             const ColorFilter.mode(kcGrey, BlendMode.srcIn),
                       ),
+                      contentPadding: const EdgeInsets.only(left: 40),
                       title: Text(
                         ksMyTrips,
                         style:
@@ -137,6 +140,7 @@ class _MainPageViewState extends State<MainPageView> {
 
                     // Help
                     ListTile(
+                      contentPadding: const EdgeInsets.only(left: 40),
                       leading: SvgPicture.asset(
                         help,
                         height: 25,
@@ -158,6 +162,7 @@ class _MainPageViewState extends State<MainPageView> {
 
                     // Driver Wallet
                     ListTile(
+                      contentPadding: const EdgeInsets.only(left: 40),
                       leading: SvgPicture.asset(
                         creditCard,
                         height: 25,
@@ -173,12 +178,14 @@ class _MainPageViewState extends State<MainPageView> {
                                 ),
                       ),
                       onTap: () {
+                        // viewModel.nToHelpPage();
                         // Navigator.pushNamed(context, ' HowItWorkPage.id');
                       },
                     ),
 
                     //Contact button
                     ListTile(
+                      contentPadding: const EdgeInsets.only(left: 40),
                       leading: SvgPicture.asset(
                         contactUsIcon,
                         height: 28,
@@ -201,6 +208,7 @@ class _MainPageViewState extends State<MainPageView> {
 
                     //SignOut button
                     ListTile(
+                      contentPadding:const EdgeInsets.only(left: 40),
                       leading: SvgPicture.asset(
                         signOutIcon,
                         height: 28,
@@ -477,7 +485,7 @@ class _MainPageViewState extends State<MainPageView> {
                                 colorFilter: const ColorFilter.mode(
                                     kcWhite, BlendMode.srcIn),
                               ),
-                              verticalSpace(20),
+                              horizontalSpace(15),
                               Text(
                                 viewModel.isOnline ? ksOnline : ksOffline,
                                 style: Theme.of(context)

@@ -27,7 +27,7 @@ class PrimaryButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(6.0),
         ),
-        color: kcBlue,
+        color: kcLoginButtonColor,
         child: Text(text ?? '',
           style: TextStyle(color: kcWhite),
         ),

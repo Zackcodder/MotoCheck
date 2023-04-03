@@ -44,7 +44,7 @@ const String ksFromJellyWebb = 'From Jellywebb';
 const String ksForDriver = "For Drivers";
 
 const String ksHomeBottomSheetTitle = 'Build Great Apps!';
-const String ksHowItWorks = "How it Work Page";
+const String ksHowItWorks = "How it Works";
 const String ksHelpQuestion = "How Can we help you!";
 const String ksHomeBottomSheetDescription =
     'Stacked is built to help you build better apps. Give us a chance and we\'ll prove it to you. Check out stacked.filledstacks.com to learn more';
@@ -70,7 +70,7 @@ const String ksCannotGoOffline = 'Cannot go offline';
 
 const String ksInstagramLaunchErrorMsg = 'Could not launch instagram';
 const String ksInstagram = "Instagram";
-const String ksIAmADriver = 'Driver';
+const String ksIAmADriver = 'Transit Driver';
 
 const String ksLetTakeYouThere = "Lets take you there";
 const String ksLoading = 'Loading ...';
