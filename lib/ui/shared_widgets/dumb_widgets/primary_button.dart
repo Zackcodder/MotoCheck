@@ -1,14 +1,17 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_local_variable
 
 import 'package:flutter/material.dart';
 import 'package:transiter_driver/ui/common/app_colors.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
 
-class PrimaryButton extends StatelessWidget {
+import '../../views/login/login_viewmodel.dart';
+
+class PrimaryButton extends StatefulWidget {
   final double? width;
   final double? height;
   final String? text;
   final VoidCallback? onPressed;
+
   const PrimaryButton({
     super.key,
     this.width,
@@ -18,19 +21,28 @@ class PrimaryButton extends StatelessWidget {
   });
 
   @override
+  State<PrimaryButton> createState() => _PrimaryButtonState();
+}
+
+class _PrimaryButtonState extends State<PrimaryButton> {
+  bool loading = false;
+  @override
   Widget build(BuildContext context) {
+    LoginViewModel viewModel;
     return SizedBox(
-      width: width ?? screenWidth(context),
-      height: height,
+      width: widget.width ?? screenWidth(context),
+      height: widget.height,
       child: MaterialButton(
-        onPressed: onPressed,
+        onPressed: widget.onPressed,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(6.0),
         ),
         color: kcLoginButtonColor,
-        child: Text(text ?? '',
-          style: TextStyle(color: kcWhite),
-        ),
+        child: 
+             Text(
+                widget.text ?? 'Loading......',
+                style: TextStyle(color: kcWhite),
+              ),
       ),
     );
   }

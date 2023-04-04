@@ -49,7 +49,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               verticalSpaceMassive,
 
               // This is the app logo on the top of the login page
-              Image.asset("assets/images/jellylogo.png"),
+              Image.asset("assets/images/logo.png", height: 60, width: 60),
               verticalSpaceSmall,
 
               // This is the login text on the welcome page below the app logo
@@ -86,26 +86,33 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               ),
               verticalSpace(35),
 
-              // This is the login button 
+              // This is the login button
+              viewModel.loading ? 
+              CircularProgressIndicator() :
               PrimaryButton(
                 height: 48.h,
                 width: 300,
                 text: 'Get in',
-                onPressed: !viewModel.isBusy
-                    ? () async {
+                onPressed:!viewModel.isBusy
+                    ?  () async {
                         // Focus.of(context).unfocus();
                         FocusScope.of(context).unfocus();
+                        viewModel.loader();
                         await viewModel.login();
                       }
-                    : null,
+                    : viewModel.loader(),
               ),
               verticalSpace(35),
 
               // welcome text for creating account for new user
               Padding(
-                padding: const EdgeInsets.only(left: 20,),
-                child: Text("One Jellywebb account connects you with the world. Don't have a Jellywebb account?",
-                 style: Theme.of(context).textTheme.bodyLarge,),
+                padding: const EdgeInsets.only(
+                  left: 20,
+                ),
+                child: Text(
+                  "One Jellywebb account connects you with the world. Don't have a Jellywebb account?",
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
               ),
             ],
           ),
