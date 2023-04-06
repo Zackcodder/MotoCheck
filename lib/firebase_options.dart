@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '59231229216',
     projectId: 'transiter-315910',
     storageBucket: 'transiter-315910.appspot.com',
-    iosClientId: '59231229216-ejj49tgd3s5nef2k9geqeccnheov6a97.apps.googleusercontent.com',
+    iosClientId:
+        '59231229216-ejj49tgd3s5nef2k9geqeccnheov6a97.apps.googleusercontent.com',
     iosBundleId: 'com.example.transiterDriver',
   );
 }

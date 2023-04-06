@@ -26,6 +26,7 @@ import 'package:transiter_driver/ui/views/login/login_view.dart';
 import 'package:transiter_driver/services/local_storage_service.dart';
 import 'package:transiter_driver/services/driver_service.dart';
 import 'package:transiter_driver/services/geofire_service.dart';
+import 'package:transiter_driver/ui/views/wallet/wallet_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -41,6 +42,7 @@ import 'package:transiter_driver/services/geofire_service.dart';
     MaterialRoute(page: NewTripView),
     MaterialRoute(page: MyTripsView),
     MaterialRoute(page: LoginView),
+    MaterialRoute(page: WalletView),
 // @stacked-route
   ],
   dependencies: [

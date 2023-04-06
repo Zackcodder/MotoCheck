@@ -27,8 +27,7 @@ class TransiterTextField extends StatelessWidget {
       width: 300,
       child: TextField(
         controller: controller,
-        style:
-        TextStyle(
+        style: TextStyle(
           color: Colors.black,
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
@@ -40,14 +39,14 @@ class TransiterTextField extends StatelessWidget {
           suffixIcon: childWidget2,
           hintStyle: Theme.of(context).textTheme.bodyMedium,
           border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-          Radius.circular(6.0),
-          ),
-          // borderSide: BorderSide(
-          // style: BorderStyle.none,
-          // color: kcTextFieldBorder,
-          // width: 0.5,
-          // ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(6.0),
+            ),
+            // borderSide: BorderSide(
+            // style: BorderStyle.none,
+            // color: kcTextFieldBorder,
+            // width: 0.5,
+            // ),
           ),
         ),
       ),

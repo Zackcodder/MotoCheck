@@ -108,5 +108,4 @@ const String ksTripDetails = 'tripDetails';
 const String ksVehicleInfoPageHeader = 'Enter vehicle details';
 const String ksValidPhoneNumberError = 'Please provide a valid Phone Number';
 
-
 const String ksWallet = 'Wallet';

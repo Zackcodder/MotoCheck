@@ -51,6 +51,7 @@ class _MainPageViewState extends State<MainPageView> {
         // Completer<GoogleMapController> _controller = Completer();
         return Scaffold(
           // key: scaffoldKey,
+          //Drawer
           drawer: Container(
             width: 280,
             color: kcWhiteBackground,
@@ -70,7 +71,6 @@ class _MainPageViewState extends State<MainPageView> {
                         ),
                         child: Row(
                           children: <Widget>[
-
                             //Driver profile picture
                             ClipRRect(
                               // ignore: sort_child_properties_last
@@ -109,8 +109,7 @@ class _MainPageViewState extends State<MainPageView> {
                                   // style: GoogleFonts.lato(color: kcGrey),
                                 ),
                               ],
-                            )
-                         
+                            ),
                           ],
                         ),
                       ),
@@ -122,7 +121,7 @@ class _MainPageViewState extends State<MainPageView> {
                         carIcon,
                         height: 28,
                         width: 28,
-                      colorFilter:
+                        colorFilter:
                             const ColorFilter.mode(kcGrey, BlendMode.srcIn),
                       ),
                       contentPadding: const EdgeInsets.only(left: 40),
@@ -178,8 +177,7 @@ class _MainPageViewState extends State<MainPageView> {
                                 ),
                       ),
                       onTap: () {
-                        // viewModel.nToHelpPage();
-                        // Navigator.pushNamed(context, ' HowItWorkPage.id');
+                        viewModel.nToWallet();
                       },
                     ),
 
@@ -204,11 +202,34 @@ class _MainPageViewState extends State<MainPageView> {
                         viewModel.nToContactPage();
                       },
                     ),
-                    verticalSpace(170),
+
+                    // Mode Changer
+                    ListTile(
+                      contentPadding: const EdgeInsets.only(left: 40),
+                      leading: SvgPicture.asset(
+                        isDarkMode(context) ? light : dark,
+                        height: 28,
+                        width: 28,
+                        colorFilter:
+                            const ColorFilter.mode(kcGrey, BlendMode.srcIn),
+                      ),
+                      title: Text(
+                        isDarkMode(context) ? 'Light Mode' : 'Dark Mode',
+                        style:
+                            Theme.of(context).textTheme.headlineLarge!.copyWith(
+                                  color: isDarkMode(context) ? kcWhite : kcDark,
+                                ),
+                      ),
+                      onTap: () async {
+                        viewModel.changeTheme();
+                        Navigator.pop(context);
+                      },
+                    ),
+                    verticalSpace(130),
 
                     //SignOut button
                     ListTile(
-                      contentPadding:const EdgeInsets.only(left: 40),
+                      contentPadding: const EdgeInsets.only(left: 40),
                       leading: SvgPicture.asset(
                         signOutIcon,
                         height: 28,
@@ -346,13 +367,13 @@ class _MainPageViewState extends State<MainPageView> {
                 },
               ),
 
-              ///Switch Theme Mode Button
+              ///Notification button
               Positioned(
                 top: 45,
                 right: 20,
                 child: GestureDetector(
                   onTap: () async {
-                    viewModel.changeTheme();
+                    // viewModel.changeTheme();
                     // switch Theme dark / light
                     // setState(() {
                     //   themeProvider.swapTheme();
@@ -375,12 +396,15 @@ class _MainPageViewState extends State<MainPageView> {
                                   0.7,
                                 ))
                           ]),
-                      child: SvgPicture.asset(
-                        isDarkMode(context) ? light : dark,
-                        colorFilter: ColorFilter.mode(
-                            isDarkMode(context) ? kcWhite : kcDark,
-                            BlendMode.srcIn),
-                      )),
+                      child: Icon(Icons.notification_add_outlined)
+                      // SvgPicture.asset(
+                      //   favorite,
+                      //   // isDarkMode(context) ? light : dark,
+                      //   colorFilter: ColorFilter.mode(
+                      //       isDarkMode(context) ? kcWhite : kcDark,
+                      //       BlendMode.srcIn),
+                      // )
+                      ),
                 ),
               ),
 
@@ -388,48 +412,46 @@ class _MainPageViewState extends State<MainPageView> {
               Positioned(
                 top: 40,
                 left: 20,
-                child: Builder(
-                  builder: (context) {
-                    return GestureDetector(
-                      onTap: () {
-                        Scaffold.of(context).openDrawer();
-                        // scaffoldKey.currentState.openDrawer();
-                      },
-                      child: Container(
-                        height: 60,
-                        width: 60,
-                        decoration: BoxDecoration(
-                            color: kcWhite,
-                            borderRadius: BorderRadius.circular(50),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.black26.withOpacity(0.1),
-                                  blurRadius: 5.0,
-                                  spreadRadius: 0.5,
-                                  offset: const Offset(
-                                    0.7,
-                                    0.7,
-                                  ))
-                            ]),
-                        child: CircleAvatar(
-                            backgroundColor: kcWhite,
-                            child: ClipRRect(
-                              child: CachedNetworkImageWidget(
-                                imageUrl: viewModel.driver
-                                    .driverPhotoUrl, //'currentFirebaseUser.currentUser.photoURL',
-                                placeholder: (context, url) =>
-                                    const CircularProgressIndicator(
-                                  backgroundColor: kcDarkLight,
-                                ),
-                                height: 60,
-                                width: 60,
+                child: Builder(builder: (context) {
+                  return GestureDetector(
+                    onTap: () {
+                      Scaffold.of(context).openDrawer();
+                      // scaffoldKey.currentState.openDrawer();
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                          color: kcWhite,
+                          borderRadius: BorderRadius.circular(50),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black26.withOpacity(0.1),
+                                blurRadius: 5.0,
+                                spreadRadius: 0.5,
+                                offset: const Offset(
+                                  0.7,
+                                  0.7,
+                                ))
+                          ]),
+                      child: CircleAvatar(
+                          backgroundColor: kcWhite,
+                          child: ClipRRect(
+                            child: CachedNetworkImageWidget(
+                              imageUrl: viewModel.driver
+                                  .driverPhotoUrl, //'currentFirebaseUser.currentUser.photoURL',
+                              placeholder: (context, url) =>
+                                  const CircularProgressIndicator(
+                                backgroundColor: kcDarkLight,
                               ),
-                              borderRadius: BorderRadius.circular(100),
-                            )),
-                      ),
-                    );
-                  }
-                ),
+                              height: 60,
+                              width: 60,
+                            ),
+                            borderRadius: BorderRadius.circular(100),
+                          )),
+                    ),
+                  );
+                }),
               ),
 
               /// OnlineButton

@@ -87,21 +87,21 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               verticalSpace(35),
 
               // This is the login button
-              viewModel.loading ? 
-              CircularProgressIndicator() :
-              PrimaryButton(
-                height: 48.h,
-                width: 300,
-                text: 'Get in',
-                onPressed:!viewModel.isBusy
-                    ?  () async {
-                        // Focus.of(context).unfocus();
-                        FocusScope.of(context).unfocus();
-                        viewModel.loader();
-                        await viewModel.login();
-                      }
-                    : viewModel.loader(),
-              ),
+              viewModel.loading
+                  ? CircularProgressIndicator()
+                  : PrimaryButton(
+                      height: 48.h,
+                      width: 300,
+                      text: 'Get in',
+                      onPressed: !viewModel.isBusy
+                          ? () async {
+                              // Focus.of(context).unfocus();
+                              FocusScope.of(context).unfocus();
+                              viewModel.loader();
+                              await viewModel.login();
+                            }
+                          : viewModel.loader(),
+                    ),
               verticalSpace(35),
 
               // welcome text for creating account for new user

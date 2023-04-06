@@ -52,7 +52,6 @@ class LoginViewModel extends FormViewModel {
   }
 
   loader() {
-      CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation(Colors.white));
+    CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colors.white));
   }
 }

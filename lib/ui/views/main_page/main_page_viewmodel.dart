@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -181,6 +182,10 @@ class MainPageViewModel extends BaseViewModel {
   //navigates to help page
   nToHelpPage() {
     _navigationService.navigateTo(Routes.howItWorksView);
+  }
+  //navigates to wallet page
+  nToWallet() {
+    _navigationService.navigateTo(Routes.newTripView);
   }
 
   //navigates to contact page

@@ -167,7 +167,7 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
                             currentColor:
                                 isDarkMode(context) ? kcWhite : kcDark),
                       )),
-                ],
+                 ],
               ),
               verticalSpace(20),
               // dataSnapshot?.value == null

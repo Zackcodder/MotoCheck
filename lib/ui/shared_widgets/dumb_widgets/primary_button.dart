@@ -38,11 +38,10 @@ class _PrimaryButtonState extends State<PrimaryButton> {
           borderRadius: BorderRadius.circular(6.0),
         ),
         color: kcLoginButtonColor,
-        child: 
-             Text(
-                widget.text ?? 'Loading......',
-                style: TextStyle(color: kcWhite),
-              ),
+        child: Text(
+          widget.text ?? 'Loading......',
+          style: TextStyle(color: kcWhite),
+        ),
       ),
     );
   }
