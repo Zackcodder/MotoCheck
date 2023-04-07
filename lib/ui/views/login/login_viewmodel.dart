@@ -10,8 +10,6 @@ import 'package:transiter_driver/services/authentication_service.dart';
 import 'package:transiter_driver/ui/common/app_strings.dart';
 import 'package:transiter_driver/ui/views/login/login_view.form.dart';
 
-import '../../../app/app.router.dart';
-
 class LoginViewModel extends FormViewModel {
   final _authenticationService = locator<AuthenticationService>();
   final _snackbarService = locator<SnackbarService>();

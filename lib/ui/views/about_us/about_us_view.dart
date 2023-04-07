@@ -31,12 +31,12 @@ class AboutUsView extends StackedView<AboutUsViewModel> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ClipRRect(
+                  borderRadius: BorderRadius.circular(100),
                   child: Image.asset(
                     "assets/images/logo1.png",
                     height: 80,
                     width: 80,
                   ),
-                  borderRadius: BorderRadius.circular(100),
                 ),
                 verticalSpaceSmall,
                 Text(

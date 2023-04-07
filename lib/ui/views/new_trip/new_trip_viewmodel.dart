@@ -172,20 +172,20 @@ class NewTripViewModel extends BaseViewModel {
 
     // rideRef.child('status').set('ended');
 
-    Map saveMyTrips = {
-      ksCreatedAt: DateTime.now().toString(),
-      ksRiderName: tripDetails.nameOfRider,
-      ksRiderPhoneNumber: tripDetails.tripRiderPhone,
-      ksRiderPhoto: tripDetails.photoOfRider,
-      ksPassengerNumber: tripDetails.passengerNumber,
-      ksPickUpAddress: tripDetails.tripPickupAddress,
-      ksDestinationAddress: tripDetails.tripDestinationAddress,
-      ksPaymentMethod: tripDetails.tripPaymentMethod,
-      ksRiderId: tripDetails.tripRideId,
-      ksTripCost: tripDetails.tripTotalCost,
-    };
+    // Map saveMyTrips = {
+    //   ksCreatedAt: DateTime.now().toString(),
+    //   ksRiderName: tripDetails.nameOfRider,
+    //   ksRiderPhoneNumber: tripDetails.tripRiderPhone,
+    //   ksRiderPhoto: tripDetails.photoOfRider,
+    //   ksPassengerNumber: tripDetails.passengerNumber,
+    //   ksPickUpAddress: tripDetails.tripPickupAddress,
+    //   ksDestinationAddress: tripDetails.tripDestinationAddress,
+    //   ksPaymentMethod: tripDetails.tripPaymentMethod,
+    //   ksRiderId: tripDetails.tripRideId,
+    //   ksTripCost: tripDetails.tripTotalCost,
+    // };
 
-    // TODO SAVE TRIP TO BACKEND
+    // TODOS SAVE TRIP TO BACKEND
 
     // saveTrip.set(saveMyTrips);
 
@@ -219,11 +219,11 @@ class NewTripViewModel extends BaseViewModel {
   }
 
   getDriverInfo() {
-    // TODO IMPLEMENT FROM BACK END
+    // TODOS IMPLEMENT FROM BACK END
   }
 
   void acceptTrip() {
-    // TODO IMPLEMENT FROM BACK END
+    // TODOS IMPLEMENT FROM BACK END
   }
 
   Future loadMapStyles() async {

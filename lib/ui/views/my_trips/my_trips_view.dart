@@ -295,13 +295,10 @@ class MyTripsView extends StackedView<MyTripsViewModel> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ClipRRect(
-                    child: CachedNetworkImageWidget(
-                      imageUrl: tripData[ksRiderPhoto],
-                      height: 50,
-                      width: 50,
-                    ),
-                    borderRadius: BorderRadius.circular(100),
+                  CachedNetworkImageWidget(
+                    imageUrl: tripData[ksRiderPhoto],
+                    height: 50,
+                    width: 50,
                   ),
                   verticalSpaceSmall,
                   Column(

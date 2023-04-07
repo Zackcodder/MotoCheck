@@ -29,6 +29,7 @@ class _MainPageViewState extends State<MainPageView> {
   // switch Dark / Light Mode of Google Map
   Future setMapStyle(BuildContext context, model) async {
     final controller = await _controller.future;
+    // ignore: use_build_context_synchronously
     if (isDarkMode(context)) {
       controller.setMapStyle(model.darkMapStyle);
     } else {
@@ -71,20 +72,15 @@ class _MainPageViewState extends State<MainPageView> {
                         ),
                         child: Row(
                           children: <Widget>[
-                            //Driver profile picture
-                            ClipRRect(
-                              // ignore: sort_child_properties_last
-                              child: CachedNetworkImageWidget(
-                                imageUrl: viewModel.driver
-                                    .driverPhotoUrl, // 'currentFirebaseUser.currentUser.photoURL',
-                                placeholder: (context, url) =>
-                                    const CircularProgressIndicator(
-                                  backgroundColor: kcDarkLight,
-                                ),
-                                height: 60,
-                                width: 60,
+                            CachedNetworkImageWidget(
+                              imageUrl: viewModel.driver
+                                  .driverPhotoUrl, // 'currentFirebaseUser.currentUser.photoURL',
+                              placeholder: (context, url) =>
+                                  const CircularProgressIndicator(
+                                backgroundColor: kcDarkLight,
                               ),
-                              borderRadius: BorderRadius.circular(100),
+                              height: 60,
+                              width: 60,
                             ),
                             horizontalSpace(15),
                             // driver name and label
@@ -412,46 +408,43 @@ class _MainPageViewState extends State<MainPageView> {
               Positioned(
                 top: 40,
                 left: 20,
-                child: Builder(builder: (context) {
-                  return GestureDetector(
-                    onTap: () {
-                      Scaffold.of(context).openDrawer();
-                      // scaffoldKey.currentState.openDrawer();
-                    },
-                    child: Container(
-                      height: 60,
-                      width: 60,
-                      decoration: BoxDecoration(
-                          color: kcWhite,
-                          borderRadius: BorderRadius.circular(50),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.black26.withOpacity(0.1),
-                                blurRadius: 5.0,
-                                spreadRadius: 0.5,
-                                offset: const Offset(
-                                  0.7,
-                                  0.7,
-                                ))
-                          ]),
-                      child: CircleAvatar(
-                          backgroundColor: kcWhite,
-                          child: ClipRRect(
-                            child: CachedNetworkImageWidget(
-                              imageUrl: viewModel.driver
-                                  .driverPhotoUrl, //'currentFirebaseUser.currentUser.photoURL',
-                              placeholder: (context, url) =>
-                                  const CircularProgressIndicator(
-                                backgroundColor: kcDarkLight,
-                              ),
-                              height: 60,
-                              width: 60,
+                child: GestureDetector(
+                  onTap: () {
+                    // scaffoldKey.currentState.openDrawer();
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                        color: kcWhite,
+                        borderRadius: BorderRadius.circular(50),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black26.withOpacity(0.1),
+                              blurRadius: 5.0,
+                              spreadRadius: 0.5,
+                              offset: const Offset(
+                                0.7,
+                                0.7,
+                              ))
+                        ]),
+                    child: CircleAvatar(
+                        backgroundColor: kcWhite,
+                        child: ClipRRect(
+                          child: CachedNetworkImageWidget(
+                            imageUrl: viewModel.driver
+                                .driverPhotoUrl, //'currentFirebaseUser.currentUser.photoURL',
+                            placeholder: (context, url) =>
+                                const CircularProgressIndicator(
+                              backgroundColor: kcDarkLight,
                             ),
-                            borderRadius: BorderRadius.circular(100),
-                          )),
-                    ),
-                  );
-                }),
+                            height: 60,
+                            width: 60,
+                          ),
+                          borderRadius: BorderRadius.circular(100),
+                        )),
+                  ),
+                ),
               ),
 
               /// OnlineButton
