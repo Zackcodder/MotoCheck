@@ -16,14 +16,14 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: "stable"
-      # - name: Create .env file
-      #   env:
-      #     GOOGLE_MAP_API_KEY: ${{ secrets.GOOGLE_MAP_API_KEY }}
-      #   run: |
-      #     touch .env
-      #     echo $GOOGLE_MAP_API_KEY >> .env
-      #     ls
-      #     cat .env
+      - name: Create .env file
+        env:
+          GOOGLE_MAP_API_KEY: ${{ secrets.GOOGLE_MAP_API_KEY }}
+        run: |
+          touch .env
+          echo $GOOGLE_MAP_API_KEY >> .env
+          ls
+          cat .env
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
