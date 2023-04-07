@@ -91,7 +91,7 @@ class VehicleInfoView extends StackedView<VehicleInfoViewModel>
                     hintText: ksCarColorHint,
                     border: OutlineInputBorder(
                         borderRadius: const BorderRadius.all(
-                          const Radius.circular(8),
+                          Radius.circular(8),
                         ),
                         borderSide: BorderSide.none),
                     isDense: true,
@@ -112,7 +112,7 @@ class VehicleInfoView extends StackedView<VehicleInfoViewModel>
                     hintText: ksCarNumberHint,
                     border: OutlineInputBorder(
                         borderRadius: const BorderRadius.all(
-                          const Radius.circular(8),
+                          Radius.circular(8),
                         ),
                         borderSide: BorderSide.none),
                     isDense: true,

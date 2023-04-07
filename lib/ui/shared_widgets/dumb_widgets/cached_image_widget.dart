@@ -24,6 +24,12 @@ class CachedNetworkImageWidget extends StatelessWidget {
                 backgroundColor: kcDarkLight,
               ),
       errorWidget: (context, val, _) => Container(),
+      imageBuilder: (context, imageProvider) => Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(image: imageProvider),
+        ),
+      ),
       height: height,
       width: width,
     );
