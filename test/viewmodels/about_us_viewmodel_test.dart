@@ -7,5 +7,7 @@ void main() {
   group('AboutUsViewModel Tests -', () {
     setUp(() => registerServices());
     tearDown(() => locator.reset());
+
+    test('testing', () {});
   });
 }
