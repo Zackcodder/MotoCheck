@@ -14,7 +14,7 @@ class VehicleInfoViewModel extends BaseViewModel {
   }
 
   updateProfile() {
-    // TODO network request to update profile
+    // TODOS network request to update profile
 
     _navigationService.navigateTo(Routes.addPhoneNumberView);
   }

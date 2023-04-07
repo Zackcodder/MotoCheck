@@ -62,7 +62,7 @@ class DriverService {
     }
     String status = online ? 'online' : 'offline';
     final res = await api.get(
-        '${ApiRoutes.setDriverStatus}?updatedriverstatus=$status&UID=$driverId&CurrentLongitude=${position[1]}&CurrentLongitude=${position[0]}');
+        '${ApiRoutes.setDriverStatus}?updatedriverstatus=$status&UID=$driverId&CurrentLongitude=${position[1]}&CurrentLatitude=${position[0]}');
 
     final response = json.decode(res.data);
 

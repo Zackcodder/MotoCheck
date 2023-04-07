@@ -41,6 +41,7 @@ class NewTripView extends StackedView<NewTripViewModel> {
         createLocalImageConfiguration(context, size: const Size(2, 2));
 
     GoogleMapController rideMapController;
+    // ignore: no_leading_underscores_for_local_identifiers
     late final GoogleMapController _controller;
 
     viewModel.createMarker(imageConfiguration);
@@ -147,13 +148,10 @@ class NewTripView extends StackedView<NewTripViewModel> {
                       children: [
                         Row(
                           children: <Widget>[
-                            ClipRRect(
-                              child: CachedNetworkImageWidget(
-                                imageUrl: tripDetails.photoOfRider,
-                                height: 50.h,
-                                width: 50.w,
-                              ),
-                              borderRadius: BorderRadius.circular(100),
+                            CachedNetworkImageWidget(
+                              imageUrl: tripDetails.photoOfRider,
+                              height: 50.h,
+                              width: 50.w,
                             ),
                             horizontalSpace(15),
                             Text(
@@ -308,7 +306,7 @@ class NewTripView extends StackedView<NewTripViewModel> {
                               destination: tripDetails.destination ?? [],
                             );
 
-                            Navigator.pop(context);
+                            // Navigator.pop(context);
                           } else if (viewModel.status == ksArrived) {
                             viewModel.setStatus = ksOnTrip;
                             // rideRef.child('status').set('ontrip');

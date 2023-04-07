@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:transiter_driver/ui/common/app_colors.dart';
-import 'package:transiter_driver/ui/common/taxi_app_Icons.dart';
+import 'package:transiter_driver/ui/common/taxi_app_icons.dart';
 import 'package:transiter_driver/ui/common/themes.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
 
@@ -45,8 +45,9 @@ class ContactUsView extends StackedView<ContactUsViewModel>
                     contactUsIcon,
                     height: 50,
                     width: 50,
-                    theme: SvgTheme(
-                      currentColor: isDarkMode(context) ? kcWhite : kcDark,
+                    colorFilter: ColorFilter.mode(
+                      isDarkMode(context) ? kcWhite : kcDark,
+                      BlendMode.srcIn,
                     ),
                   ),
                   verticalSpace(20),

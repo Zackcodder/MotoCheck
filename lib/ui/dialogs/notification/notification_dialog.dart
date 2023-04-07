@@ -93,13 +93,10 @@ class NotificationDialog extends StackedView<NotificationDialogModel> {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      ClipRRect(
-                        child: CachedNetworkImageWidget(
-                          imageUrl: tripDetails.riderPhoto ?? '',
-                          height: 50,
-                          width: 50,
-                        ),
-                        borderRadius: BorderRadius.circular(100),
+                      CachedNetworkImageWidget(
+                        imageUrl: tripDetails.riderPhoto ?? '',
+                        height: 50,
+                        width: 50,
                       ),
                       horizontalSpaceSmall,
                       Text(

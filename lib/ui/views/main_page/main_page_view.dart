@@ -29,6 +29,7 @@ class _MainPageViewState extends State<MainPageView> {
   // switch Dark / Light Mode of Google Map
   Future setMapStyle(BuildContext context, model) async {
     final controller = await _controller.future;
+    // ignore: use_build_context_synchronously
     if (isDarkMode(context)) {
       controller.setMapStyle(model.darkMapStyle);
     } else {
@@ -69,18 +70,15 @@ class _MainPageViewState extends State<MainPageView> {
                         ),
                         child: Row(
                           children: <Widget>[
-                            ClipRRect(
-                              child: CachedNetworkImageWidget(
-                                imageUrl: viewModel.driver
-                                    .driverPhotoUrl, // 'currentFirebaseUser.currentUser.photoURL',
-                                placeholder: (context, url) =>
-                                    const CircularProgressIndicator(
-                                  backgroundColor: kcDarkLight,
-                                ),
-                                height: 60,
-                                width: 60,
+                            CachedNetworkImageWidget(
+                              imageUrl: viewModel.driver
+                                  .driverPhotoUrl, // 'currentFirebaseUser.currentUser.photoURL',
+                              placeholder: (context, url) =>
+                                  const CircularProgressIndicator(
+                                backgroundColor: kcDarkLight,
                               ),
-                              borderRadius: BorderRadius.circular(100),
+                              height: 60,
+                              width: 60,
                             ),
                             horizontalSpace(15),
                             Column(
@@ -370,18 +368,15 @@ class _MainPageViewState extends State<MainPageView> {
                         ]),
                     child: CircleAvatar(
                         backgroundColor: kcWhite,
-                        child: ClipRRect(
-                          child: CachedNetworkImageWidget(
-                            imageUrl: viewModel.driver
-                                .driverPhotoUrl, //'currentFirebaseUser.currentUser.photoURL',
-                            placeholder: (context, url) =>
-                                const CircularProgressIndicator(
-                              backgroundColor: kcDarkLight,
-                            ),
-                            height: 60,
-                            width: 60,
+                        child: CachedNetworkImageWidget(
+                          imageUrl: viewModel.driver
+                              .driverPhotoUrl, //'currentFirebaseUser.currentUser.photoURL',
+                          placeholder: (context, url) =>
+                              const CircularProgressIndicator(
+                            backgroundColor: kcDarkLight,
                           ),
-                          borderRadius: BorderRadius.circular(100),
+                          height: 60,
+                          width: 60,
                         )),
                   ),
                 ),
