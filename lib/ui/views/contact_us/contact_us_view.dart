@@ -45,8 +45,9 @@ class ContactUsView extends StackedView<ContactUsViewModel>
                     contactUsIcon,
                     height: 50,
                     width: 50,
-                    theme: SvgTheme(
-                      currentColor: isDarkMode(context) ? kcWhite : kcDark,
+                    colorFilter: ColorFilter.mode(
+                      isDarkMode(context) ? kcWhite : kcDark,
+                      BlendMode.srcIn,
                     ),
                   ),
                   verticalSpace(20),

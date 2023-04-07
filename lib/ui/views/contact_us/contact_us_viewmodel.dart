@@ -12,6 +12,6 @@ class ContactUsViewModel extends BaseViewModel {
   }
 
   sendData() {
-    // TODO network request for contact form
+    // TODOS network request for contact form
   }
 }

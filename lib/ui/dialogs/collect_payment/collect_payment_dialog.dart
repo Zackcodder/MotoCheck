@@ -62,8 +62,7 @@ class CollectPaymentDialog extends StackedView<CollectPaymentDialogModel> {
             GestureDetector(
               onTap: () {
                 Navigator.pop(context);
-                Navigator.pop(context);
-                // TODO IMPLEMENT
+                // TODOS IMPLEMENT
                 // HelperMethods.enableHomTabLocationUpdates();
               },
               child: Padding(
