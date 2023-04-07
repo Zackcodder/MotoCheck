@@ -249,6 +249,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.4"
+  firebase_core:
+    dependency: "direct main"
+    description:
+      name: firebase_core
+      sha256: "75f747cafd7cbd6c00b908e3a7aa59fc31593d46ba8165d9ee8a79e69464a394"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.8.0"
+  firebase_core_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_core_platform_interface
+      sha256: "5615b30c36f55b2777d0533771deda7e5730e769e5d3cb7fda79e9bed86cfa55"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.5.3"
+  firebase_core_web:
+    dependency: transitive
+    description:
+      name: firebase_core_web
+      sha256: "0c1cf1f1022d2245ac117443bb95207952ca770281524d2908e323bc063fb8ff"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.2"
   fixnum:
     dependency: transitive
     description:
@@ -286,6 +310,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.2"
+  flutter_geofire:
+    dependency: "direct main"
+    description:
+      name: flutter_geofire
+      sha256: "756588ac6ee477d59cb6516a49f69a7306d35765c7de738ec894d77359d4de79"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.3"
   flutter_launcher_icons:
     dependency: "direct main"
     description:
@@ -817,13 +849,13 @@ packages:
     source: hosted
     version: "0.27.7"
   shared_preferences:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: shared_preferences
-      sha256: ee6257848f822b8481691f20c3e6d2bfee2e9eccb2a3d249907fcfb198c55b41
+      sha256: "78528fd87d0d08ffd3e69551173c026e8eacc7b7079c82eb6a77413957b7e394"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.18"
+    version: "2.0.20"
   shared_preferences_android:
     dependency: transitive
     description:

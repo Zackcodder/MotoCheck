@@ -8,10 +8,16 @@ import 'package:transiter_driver/app/app.locator.dart';
 import 'package:transiter_driver/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:transiter_driver/ui/common/themes.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'ui/common/app_strings.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   await ScreenUtil.ensureScreenSize();
   // initialise theme manager
   await ThemeManager.initialise();
@@ -41,7 +47,7 @@ class MyApp extends StatelessWidget {
               builder: (context, regularTheme, darkTheme, themeMode) {
                 return MaterialApp(
                   title: ksAppTitle,
-                  initialRoute: Routes.splashScreenView,
+                  initialRoute: Routes.mainPageView,
                   onGenerateRoute: StackedRouter().onGenerateRoute,
                   navigatorKey: StackedService.navigatorKey,
                   navigatorObservers: [

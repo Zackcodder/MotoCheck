@@ -14,11 +14,11 @@ import 'contact_us_viewmodel.dart';
 
 @FormView(fields: [
   FormTextField(
-    name: ksContactUsSubjectHint,
+    name: 'subject',
     // validator: AddPhoneNumberValidators.validatePhoneNumber,
   ),
   FormTextField(
-    name: ksContactUsMessageHint,
+    name: 'message',
     // validator: AddPhoneNumberValidators.validatePhoneNumber,
   ),
 ])
@@ -118,8 +118,7 @@ class ContactUsView extends StackedView<ContactUsViewModel>
                     onTap: () {
                       viewModel.sendData();
 
-                      viewModel.showSnackBar(
-                          ksContactUsSuccessMessage);
+                      viewModel.showSnackBar(ksContactUsSuccessMessage);
                     },
                     child: Container(
                       height: 50,

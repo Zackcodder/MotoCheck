@@ -9,11 +9,9 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-import '../../common/app_strings.dart';
-
-const String CarModelValueKey = ksCarModelTextField;
-const String CarColorValueKey = ksCarColorTextField;
-const String VehicleNumberValueKey = ksCarNumberTextField;
+const String CarModelValueKey = 'carModel';
+const String CarColorValueKey = 'carColor';
+const String VehicleNumberValueKey = 'vehicleNumber';
 
 final Map<String, TextEditingController>
     _VehicleInfoViewTextEditingControllers = {};

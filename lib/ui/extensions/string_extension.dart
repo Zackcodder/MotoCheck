@@ -36,4 +36,12 @@ extension StringExtension on String {
 
     return regExp.hasMatch(this);
   }
+
+  DateTime turnToDateTime(String format, [bool isUtc = false]) {
+    return DateFormat(format).parse(this, isUtc);
+  }
+
+  String turnStringToDate(String format) {
+    return DateFormat(format).format(DateTime.parse(this)).toString();
+  }
 }
