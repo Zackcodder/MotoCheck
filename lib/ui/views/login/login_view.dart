@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stacked/stacked.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:stacked/stacked_annotations.dart';
+import 'package:transiter_driver/ui/common/app_constants.dart';
+import 'package:transiter_driver/ui/common/app_strings.dart';
 import 'package:transiter_driver/ui/common/mixins/validators_mixin.dart';
 import 'package:transiter_driver/ui/common/ui_helpers.dart';
 import 'package:transiter_driver/ui/shared_widgets/dumb_widgets/primary_button.dart';
@@ -49,7 +51,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
               verticalSpaceMassive,
 
               // This is the app logo on the top of the login page
-              Image.asset("assets/images/logo.png", height: 60, width: 60),
+              Image.asset(appLogo, height: 60, width: 60),
               verticalSpaceSmall,
 
               // This is the login text on the welcome page below the app logo
@@ -72,22 +74,23 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                 controller: passwordController,
                 childWidget: Icon(Icons.lock, color: kcBlue, size: 20),
                 childWidget2: IconButton(
-                  onPressed: viewModel.togglePasswordView(),
+                  onPressed: viewModel.setPasswordVisibility(false),
                   icon: Icon(
-                    viewModel.hidepassword
-                        ? FontAwesomeIcons.eyeSlash
-                        : FontAwesomeIcons.eye,
+                    // !viewModel.setPasswordVisibility(false)
+                    //     ? FontAwesomeIcons.eyeSlash
+                    //     :
+                    FontAwesomeIcons.eye,
                     size: 20.0,
                     color: kcBlue,
                   ),
                 ),
                 hintText: 'Password',
-                obscureText: viewModel.hidepassword,
+                // obscureText: viewModel.setPasswordVisibility(true),
               ),
               verticalSpace(35),
 
               // This is the login button
-              viewModel.loading
+              viewModel.isBusy
                   ? CircularProgressIndicator()
                   : PrimaryButton(
                       height: 48.h,
@@ -97,10 +100,9 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                           ? () async {
                               // Focus.of(context).unfocus();
                               FocusScope.of(context).unfocus();
-                              viewModel.loader();
                               await viewModel.login();
                             }
-                          : viewModel.loader(),
+                          : null,
                     ),
               verticalSpace(35),
 
@@ -110,7 +112,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                   left: 20,
                 ),
                 child: Text(
-                  "One Jellywebb account connects you with the world. Don't have a Jellywebb account?",
+                  ksOneJellyWebbAccountConnectsYou,
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ),

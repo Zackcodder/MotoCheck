@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../common/app_strings.dart';
 import 'how_it_works_viewmodel.dart';
@@ -13,10 +14,8 @@ class HowItWorksView extends StackedView<HowItWorksViewModel> {
     HowItWorksViewModel viewModel,
     Widget? child,
   ) {
-    return const Scaffold(
-      body: Center(
-        child: Text(ksHowItWorks),
-      ),
+    return Scaffold(
+      body: WebViewWidget(controller: viewModel.controller),
     );
   }
 

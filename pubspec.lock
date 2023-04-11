@@ -153,14 +153,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.2"
-  cli_util:
-    dependency: transitive
-    description:
-      name: cli_util
-      sha256: "66f86e916d285c1a93d3b79587d94bd71984a66aac4ff74e524cfa7877f1395c"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.5"
   clock:
     dependency: transitive
     description:
@@ -330,10 +322,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_launcher_icons
-      sha256: "02dcaf49d405f652b7160e882bacfc02cb497041bb2eab2a49b1c393cf9aac12"
+      sha256: "559c600f056e7c704bd843723c21e01b5fba47e8824bd02422165bcc02a5de1d"
       url: "https://pub.dev"
     source: hosted
-    version: "0.12.0"
+    version: "0.9.3"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -346,10 +338,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_native_splash
-      sha256: af665ef80a213a9ed502845a3d7a61b9acca4100ee7e9f067a7440bc3acd6730
+      sha256: "6777a3abb974021a39b5fdd2d46a03ca390e03903b6351f21d10e7ecc969f12d"
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.19"
+    version: "2.2.16"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -572,10 +564,10 @@ packages:
     dependency: transitive
     description:
       name: image
-      sha256: "483a389d6ccb292b570c31b3a193779b1b0178e7eb571986d9a49904b6861227"
+      sha256: "8e9d133755c3e84c73288363e6343157c383a0c6c56fc51afcc5d4d7180306d6"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.15"
+    version: "3.3.0"
   intl:
     dependency: "direct main"
     description:
@@ -1221,6 +1213,38 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.0"
+  webview_flutter:
+    dependency: "direct main"
+    description:
+      name: webview_flutter
+      sha256: "47663d51a9061451aa3880a214ee9a65dcbb933b77bc44388e194279ab3ccaf6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.7"
+  webview_flutter_android:
+    dependency: transitive
+    description:
+      name: webview_flutter_android
+      sha256: "5906c9aa8c88ed372b2ad3c88c942790b4fb16f73fdd1c0647b4d747d9cf5b3f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.4.5"
+  webview_flutter_platform_interface:
+    dependency: transitive
+    description:
+      name: webview_flutter_platform_interface
+      sha256: "1939c39e2150fb4d30fd3cc59a891a49fed9935db53007df633ed83581b6117b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
+  webview_flutter_wkwebview:
+    dependency: transitive
+    description:
+      name: webview_flutter_wkwebview
+      sha256: d601aba11ad8d4481e17a34a76fa1d30dee92dcbbe2c58b0df3120e9453099c7
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.3"
   win32:
     dependency: transitive
     description:
@@ -1254,5 +1278,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.19.0-43.0.dev <3.0.0"
-  flutter: ">=3.3.0"
+  dart: ">=2.19.0 <3.0.0"
+  flutter: ">=3.7.0-0"

@@ -52,6 +52,7 @@ const String ksHomeBottomSheetDescription =
 const String ksYourDriveApprovalIsPending = 'Your drive approval is pending';
 const String ksOnline = 'ONLINE';
 const String ksOffline = 'OFFLINE';
+const String ksOneJellyWebbAccountConnectsYou = "One Jellywebb account connects you with the world. Don't have a Jellywebb account?";
 const String ksYouAreAboutToBecomeAvailableToReceiveTripRequests =
     'You are about to become available to receive trip requests';
 const String ksYouWouldStopReceivingNewTripRequests =
