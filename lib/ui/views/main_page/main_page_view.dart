@@ -392,7 +392,7 @@ class _MainPageViewState extends State<MainPageView> {
                                   0.7,
                                 ))
                           ]),
-                      child: Icon(Icons.notification_add_outlined)
+                      child: const Icon(Icons.notification_add_outlined)
                       // SvgPicture.asset(
                       //   favorite,
                       //   // isDarkMode(context) ? light : dark,
@@ -408,48 +408,46 @@ class _MainPageViewState extends State<MainPageView> {
               Positioned(
                 top: 40,
                 left: 20,
-                child: Builder(
-                  builder: (context) {
-                    return GestureDetector(
-                      onTap: () {
-                        // ScaffoldKey.currentState.openDrawer();
-                        Scaffold.of(context).openDrawer();
-                      },
-                      child: Container(
-                        height: 60,
-                        width: 60,
-                        decoration: BoxDecoration(
-                            color: kcWhite,
-                            borderRadius: BorderRadius.circular(50),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.black26.withOpacity(0.1),
-                                  blurRadius: 5.0,
-                                  spreadRadius: 0.5,
-                                  offset: const Offset(
-                                    0.7,
-                                    0.7,
-                                  ))
-                            ]),
-                        child: CircleAvatar(
-                            backgroundColor: kcWhite,
-                            child: ClipRRect(
-                              child: CachedNetworkImageWidget(
-                                imageUrl: viewModel.driver
-                                    .driverPhotoUrl, //'currentFirebaseUser.currentUser.photoURL',
-                                placeholder: (context, url) =>
-                                    const CircularProgressIndicator(
-                                  backgroundColor: kcDarkLight,
-                                ),
-                                height: 60,
-                                width: 60,
+                child: Builder(builder: (context) {
+                  return GestureDetector(
+                    onTap: () {
+                      // ScaffoldKey.currentState.openDrawer();
+                      Scaffold.of(context).openDrawer();
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                          color: kcWhite,
+                          borderRadius: BorderRadius.circular(50),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black26.withOpacity(0.1),
+                                blurRadius: 5.0,
+                                spreadRadius: 0.5,
+                                offset: const Offset(
+                                  0.7,
+                                  0.7,
+                                ))
+                          ]),
+                      child: CircleAvatar(
+                          backgroundColor: kcWhite,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(100),
+                            child: CachedNetworkImageWidget(
+                              imageUrl: viewModel.driver
+                                  .driverPhotoUrl, //'currentFirebaseUser.currentUser.photoURL',
+                              placeholder: (context, url) =>
+                                  const CircularProgressIndicator(
+                                backgroundColor: kcDarkLight,
                               ),
-                              borderRadius: BorderRadius.circular(100),
-                            )),
-                      ),
-                    );
-                  }
-                ),
+                              height: 60,
+                              width: 60,
+                            ),
+                          )),
+                    ),
+                  );
+                }),
               ),
 
               /// OnlineButton

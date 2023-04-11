@@ -74,7 +74,8 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                 controller: passwordController,
                 childWidget: Icon(Icons.lock, color: kcBlue, size: 20),
                 childWidget2: IconButton(
-                  onPressed: viewModel.setPasswordVisibility(false),
+                  onPressed: null,
+                  // viewModel.setPasswordVisibility(false),
                   icon: Icon(
                     // !viewModel.setPasswordVisibility(false)
                     //     ? FontAwesomeIcons.eyeSlash
