@@ -35,8 +35,8 @@ class TransiterTextField extends StatelessWidget {
           suffixIcon: childWidget2,
           hintStyle: Theme.of(context).textTheme.bodyMedium,
           border: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(
-               Radius.circular(6.0),
+            borderRadius: const BorderRadius.all(
+               const Radius.circular(6.0),
             ),
             // borderSide: BorderSide(
             // style: BorderStyle.none,
