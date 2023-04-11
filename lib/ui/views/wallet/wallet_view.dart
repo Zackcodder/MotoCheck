@@ -12,8 +12,7 @@ class WalletView extends StackedView<WalletViewModel> {
     WalletViewModel viewModel,
     Widget? child,
   ) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+    return Scaffold( backgroundColor: Theme.of(context).backgroundColor,
       body: Container(
         padding: const EdgeInsets.only(left: 25.0, right: 25.0),
       ),

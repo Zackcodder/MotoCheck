@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:transiter_driver/app/app.locator.dart';
@@ -13,12 +13,12 @@ class LoginViewModel extends FormViewModel {
   final _snackbarService = locator<SnackbarService>();
   final _navigationService = locator<NavigationService>();
 
-  bool _hidePassword = false;
+  // bool _hidePassword = false;
 
   // This is the toggle button to hide and show user password
-  setPasswordVisibility(bool value) {
-    _hidePassword = value;
-  }
+  // setPasswordVisibility(bool value) {
+  //   _hidePassword = value;
+  // }
 
   // This is the login function button
   login() async {

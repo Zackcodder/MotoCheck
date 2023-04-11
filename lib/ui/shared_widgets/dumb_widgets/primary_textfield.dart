@@ -1,10 +1,6 @@
-// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:transiter_driver/ui/common/app_colors.dart';
-
-import '../../common/themes.dart';
 
 class TransiterTextField extends StatelessWidget {
   final String? hintText;

@@ -27,7 +27,7 @@ class ConfirmSheet extends StackedView<ConfirmSheetModel> {
 
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20), topRight: Radius.circular(20)),
         color: isDarkMode(context) ? kcDark : kcWhite,
         boxShadow: [
