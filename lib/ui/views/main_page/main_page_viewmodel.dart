@@ -182,9 +182,10 @@ class MainPageViewModel extends BaseViewModel {
   nToHelpPage() {
     _navigationService.navigateTo(Routes.howItWorksView);
   }
+
   //navigates to wallet page
   nToWallet() {
-    _navigationService.navigateTo(Routes.newTripView);
+    _navigationService.navigateTo(Routes.myTripsView);
   }
 
   //navigates to contact page

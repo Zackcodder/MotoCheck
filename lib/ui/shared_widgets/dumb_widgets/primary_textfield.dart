@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -36,7 +35,7 @@ class TransiterTextField extends StatelessWidget {
           hintStyle: Theme.of(context).textTheme.bodyMedium,
           border: const OutlineInputBorder(
             borderRadius: const BorderRadius.all(
-               const Radius.circular(6.0),
+              const Radius.circular(6.0),
             ),
             // borderSide: BorderSide(
             // style: BorderStyle.none,
